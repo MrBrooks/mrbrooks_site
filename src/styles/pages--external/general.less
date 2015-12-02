@@ -1,0 +1,48 @@
+/* GENERAL TAGS */
+
+body{
+  background-color: @dark;
+  color: @white;
+}
+a{
+  color: @white;
+  &:hover{
+    color:@white;
+
+  }
+}
+h1,h2,h3,h4,h5,h6{
+  color: @bronse;
+}
+
+/* GENERAL CLASSES */
+.mbr-container{
+  width: @container-width;
+  margin: 0 10px;
+}
+.mbr-header{
+  width: 100%;
+  height: @menu-height;
+  background-color: transparent;
+  padding: 23px 30px;
+}
+.mbr-header__logo{
+  width: 145px;
+  float: left;
+}
+.mbr-nav{
+  float: right;
+  ul{
+    list-style: none;
+    padding: 0;
+  }
+  li{
+    display: inline-block;
+    border-right: 1px solid @bronse;
+    padding: 2px 27px;
+    text-transform: uppercase;
+    &:last-child{
+      border:0;
+    }
+  }
+}
