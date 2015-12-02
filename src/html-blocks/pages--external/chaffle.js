@@ -1,36 +1,3 @@
-<!DOCTYPE html>
-<html lang="ru" class="no-js" prefix="og: http://ogp.me/ns#">
-
-    <!-- build:include html-blocks/common/head.html -->
-    This will be replaced by the content of html-blocks/common/head.html
-    <!-- /build -->
-
-    <body>
-
-        <!-- build:include html-blocks/common/if-ie.html -->
-        This will be replaced by the content of html-blocks/common/if-ie.html
-        <!-- /build -->
-
-        <!-- build:include html-blocks/pages--external/header--external.html -->
-        This will be replaced by the content of html-blocks/pages--external/header--external.html
-        <!-- /build -->
-
-        <main class="mbr-container">
-          <!-- build:include html-blocks/pages--external/main-anim-block.html -->
-          This will be replaced by the content of html-blocks/pages--external/main-anim-block.html
-          <!-- /build -->
-
-          <!-- build:include html-blocks/pages--external/main-portfolio-block.html -->
-          This will be replaced by the content of html-blocks/pages--external/main-portfolio-block.html
-          <!-- /build -->
-        </main>
-
-        <!-- build:include html-blocks/pages--external/footer--external.html -->
-        This will be replaced by the content of html-blocks/pages--external/footer--external.html
-        <!-- /build -->
-
-    </body>
-<script type="text/javascript">
 (function($) {
   var namespace = 'chaffle';
   var methods = {    
@@ -146,10 +113,3 @@
     }    
   };
 })(jQuery);
-
-  $('.chaffle').chaffle({
-    speed: 20,
-    time: 140
-  });
-  </script>
-</html>
