@@ -5,7 +5,6 @@
 $(document).ready(function() {
 
     /* Custom */
-
  /*    //= ./common/material-init.js */
  /*    //= ./common/google-analytics.js */
   $(".mbr-main-anim").height(window.innerHeight);
@@ -14,4 +13,7 @@ $(document).ready(function() {
     items: 4
   });
 
+
+ 
+ 
 });

@@ -16,7 +16,7 @@ var gulp = require('gulp'), // Task runner
     concat = require('gulp-concat'), // Concatenates files
     streamqueue = require('streamqueue'), // Pipe queued streams progressively, keeping datas order.
     sourcemaps = require('gulp-sourcemaps'), // Write source maps
-    sass = require('gulp-sass'), //Compile Sass to CSS
+    //sass = require('gulp-sass'), //Compile Sass to CSS
     less = require('gulp-less'), // Compile Less to CSS
     lessReporter = require('gulp-less-reporter'), // Error reporter for gulp-less
     autoprefixer = require('gulp-autoprefixer'), // Prefix CSS
@@ -86,7 +86,7 @@ var config = {
     server: {
         baseDir: "./build"
     },
-    // tunnel: true,
+    // tunnel: true,K
     host: 'localhost',
     port: 9000,
     injectChanges: true,
@@ -144,8 +144,9 @@ gulp.task('less', function() {
         }))
         .on('error', lessReporter)
         .pipe(autoprefixer({
-                        browsers: ['last 2 versions']
-                    }))
+          browsers: ['last 2 versions'],
+          cascade: false
+        }))
         .pipe(csscomb())
         .pipe(gulp.dest(projectPath.build.css))
         .pipe(rename({ suffix: '.min' }))
@@ -158,7 +159,7 @@ gulp.task('less', function() {
         .pipe(reload({stream: true}));
 });
 
-/*Sass*/
+/*Sass
 gulp.task('sass', function() {
     return gulp.src(projectPath.src.stylesass)
         .pipe(sourcemaps.init())
@@ -174,7 +175,7 @@ gulp.task('sass', function() {
         }))
         .pipe(gulp.dest(projectPath.build.css))
         .pipe(reload({stream: true}));
-});
+});*/
 
 /* Images */
 gulp.task('images', function () {
@@ -276,7 +277,7 @@ gulp.task('build', function(callback) {
         'svg-sprite',
         'svg',
         'fonts',
-        'gh-pages',
+        // 'gh-pages',
         callback)
 });
 
