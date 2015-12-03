@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!-- <!DOCTYPE html>
 <html lang="ru" class="no-js" prefix="og: http://ogp.me/ns#">
 
     <head>
@@ -104,13 +104,44 @@
     </div>
   </div>
 </section>
+<style type="text/css">
 
+  figure {
+    width: 100%;
+    overflow: hidden;
+  }
+  /* Circle */
+  .mbr-portfolio__item figure {
+    position: relative;
+  }
+  figure::before {
+    transition: 0.3s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    content: '';
+    width: 0;
+    height: 0;
+    background: rgba(0,0,0,.7);
+    border-radius: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+  }
+  .mbr-portfolio__item figure:hover::before {
+    transition: 0.6s;
+      width: 200%;
+      height: 200%;
+  }
+
+</style>
           <section>
   <div class="mbr-portfolio">
     <div class="mbr-portfolio__first-block">
       <div class="big-block">
-        <div class="mbr-portfolio__item">
-          <img src="http://placehold.it/1250/fff/111">
+        <div class="mbr-portfolio__item ch-item">
+          <figure> <img src="img/images/main_1024.jpg"> </figure> 
         </div>
       </div>
       <div class="big-block">
@@ -118,46 +149,46 @@
           <img src="http://placehold.it/1250x615/fff/111">
         </div>
         <div class="small-block">
-          <div class="mbr-portfolio__item">
-            <img src="http://placehold.it/615/fff/111">
+          <div class="mbr-portfolio__item ch-item">
+            <figure> <img src="img/images/main_615_1.jpg"> </figure>
           </div>
           <div class="mbr-portfolio__item">
-            <img src="http://placehold.it/615/fff/111">
+           <figure> <img src="img/images/main_615_2.jpg"> </figure>
           </div>
         </div>
       </div>
     </div>
     <div class="mbr-portfolio__center-block">
       <div class="mbr-portfolio__item">
-        <img src="http://placehold.it/615/fff/111">
+        <figure> <img src="http://placehold.it/615/fff/111"></figure>
       </div>
       <div class="mbr-portfolio__item">
-        <img src="http://placehold.it/1250x615/fff/111">
+        <figure> <img src="http://placehold.it/1250x615/fff/111"></figure>
       </div>
       <div class="mbr-portfolio__item">
-        <img src="http://placehold.it/615/fff/111">
+        <figure> <img src="http://placehold.it/615/fff/111"></figure>
       </div>
     </div>
     <div class="mbr-portfolio__left-block">
       <div class="mbr-portfolio__item">
-        <img src="http://placehold.it/1250x615/fff/111">
+        <figure> <img src="http://placehold.it/1250x615/fff/111"> </figure>
       </div>
       <div class="mbr-portfolio__item">
-        <img src="http://placehold.it/615/fff/111">
+        <figure> <img src="http://placehold.it/615/fff/111"> </figure>
       </div>
       <div class="mbr-portfolio__item">
-        <img src="http://placehold.it/615/fff/111">
+        <figure> <img src="http://placehold.it/615/fff/111"> </figure>
       </div>
     </div>
     <div class="mbr-portfolio__right-block">
       <div class="mbr-portfolio__item">
-        <img src="http://placehold.it/615/fff/111">
+        <figure> <img src="http://placehold.it/615/fff/111"> </figure>
       </div>
       <div class="mbr-portfolio__item">
-        <img src="http://placehold.it/615/fff/111">
+        <figure> <img src="http://placehold.it/615/fff/111"> </figure>
       </div>
       <div class="mbr-portfolio__item">
-        <img src="http://placehold.it/1250x615/fff/111">
+        <figure> <img src="img/images/main_1250_1.jpg"> </figure>
       </div>
     </div>
   </div>
@@ -211,18 +242,19 @@
             </div>       
           </div>
           <div class="mbr-footer--wrap__section" >
-            <div style="text-align: right; padding-right: 40px;">
+            <div style="text-align: right; padding-right: 40px">
               &#169;  Mr. Brooks 2015 </div>
             </div>
         </div>
 </footer>
 
 <!-- JavaScript-->
-<script src="js/main.min.js"></script>
-<script async src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+    <script src="js/main.min.js"></script>
+    <script async src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 
     </body>
-<script type="text/javascript">
+    <script type="text/javascript">
+
 (function($) {
   var namespace = 'chaffle';
   var methods = {    
@@ -242,7 +274,6 @@
             options: options
           });
         }
-
         var $text = $this.text();
         var substitution;　//代入テキスト
         var shuffle_timer;
@@ -307,7 +338,6 @@
           shuffle_timer = setInterval(function(){
             shuffle.call(_this);
           }, options.speed);
-
           shuffle_timer_delay = setInterval(function() {
             shuffle_delay.call(this);
           }, options.time);
@@ -338,10 +368,10 @@
     }    
   };
 })(jQuery);
-
   $('.chaffle').chaffle({
     speed: 20,
     time: 140
   });
-  </script>
-</html>
+
+    </script>
+</html> 

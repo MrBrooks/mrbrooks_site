@@ -9091,6 +9091,7 @@ h6
 }
 .mbr-portfolio__right-block .mbr-portfolio__item
 {
+    position: relative;
     padding: 10px;
 }
 .mbr-portfolio__right-block .mbr-portfolio__item:nth-child(3)
