@@ -11,7 +11,11 @@ $(document).ready(function() {
   $(".mbr-main-anim").height(window.innerHeight);
   $("#mbr-clients-slider").owlCarousel({
     loop: true,
-    items: 4
+    items: 4,
+    autoplay: true,
+    autoplayTimeout: 1000,
+    dots: false,
+    nav: false
   });
 
 });
