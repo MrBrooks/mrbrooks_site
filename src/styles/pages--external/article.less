@@ -1,0 +1,49 @@
+.mbr-banner{
+  display: inline-table;
+  width: 100%;
+  min-height: 720px;
+  background-image: url(../img/images/1680x720.png);
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  h1{
+    display: table-cell;
+    vertical-align: middle;
+    padding: 0 30%;
+    color: @white;
+  }
+  span{
+    position: absolute;
+    top: 660px;
+    width: 100%;
+    color: @bronse;
+  }
+}
+.mbr-article__controls{
+  width: ~"calc(100% / 7 * 4 )";
+  margin: auto;
+  img{
+    margin-top: -50px;
+  }
+  span{
+    display: inline-block;
+  }
+  a{
+    color: @dark;
+    display: inline-block;
+    text-decoration: none;
+    &:last-child img{
+      transform-origin: 50% 50%;
+      transform: rotate(180deg);
+    }
+    &:last-child{
+      float: right;
+    }
+
+  }
+}
+.mbr-article__content{
+  color: @dark;
+  width: ~"calc(100% / 7 * 4 )";
+  margin: auto;
+}

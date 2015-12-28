@@ -2055,41 +2055,41 @@ pre code
 {
     margin-right: auto;
     margin-left: auto;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 @media (min-width: 768px)
 {
     .container
     {
-        width: 750px;
+        width: 740px;
     }
 }
 @media (min-width: 992px)
 {
     .container
     {
-        width: 970px;
+        width: 960px;
     }
 }
 @media (min-width: 1200px)
 {
     .container
     {
-        width: 1170px;
+        width: 1160px;
     }
 }
 .container-fluid
 {
     margin-right: auto;
     margin-left: auto;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 .row
 {
-    margin-right: -15px;
-    margin-left: -15px;
+    margin-right: -10px;
+    margin-left: -10px;
 }
 .col-xs-1,
 .col-sm-1,
@@ -2143,8 +2143,8 @@ pre code
     position: relative;
 
     min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 .col-xs-1,
 .col-xs-2,
@@ -3933,8 +3933,8 @@ select[multiple].input-lg
 }
 .form-horizontal .form-group
 {
-    margin-right: -15px;
-    margin-left: -15px;
+    margin-right: -10px;
+    margin-left: -10px;
 }
 @media (min-width: 768px)
 {
@@ -3948,7 +3948,7 @@ select[multiple].input-lg
 }
 .form-horizontal .has-feedback .form-control-feedback
 {
-    right: 15px;
+    right: 10px;
 }
 @media (min-width: 768px)
 {
@@ -5497,8 +5497,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 {
     overflow-x: visible;
 
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-right: 10px;
+    padding-left: 10px;
 
     border-top: 1px solid transparent;
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, .1);
@@ -5556,8 +5556,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 .container > .navbar-collapse,
 .container-fluid > .navbar-collapse
 {
-    margin-right: -15px;
-    margin-left: -15px;
+    margin-right: -10px;
+    margin-left: -10px;
 }
 @media (min-width: 768px)
 {
@@ -5621,7 +5621,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
     float: left;
 
     height: 62px;
-    padding: 21px 15px;
+    padding: 21px 10px;
 }
 .navbar-brand:hover,
 .navbar-brand:focus
@@ -5637,7 +5637,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
     .navbar > .container .navbar-brand,
     .navbar > .container-fluid .navbar-brand
     {
-        margin-left: -15px;
+        margin-left: -10px;
     }
 }
 .navbar-toggle
@@ -5647,7 +5647,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
     float: right;
 
     margin-top: 14px;
-    margin-right: 15px;
+    margin-right: 10px;
     margin-bottom: 14px;
     padding: 9px 10px;
 
@@ -5682,7 +5682,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 }
 .navbar-nav
 {
-    margin: 10.5px -15px;
+    margin: 10.5px -10px;
 }
 .navbar-nav > li > a
 {
@@ -5742,10 +5742,10 @@ select[multiple].input-group-sm > .input-group-btn > .btn
 .navbar-form
 {
     margin-top: 14px;
-    margin-right: -15px;
+    margin-right: -10px;
     margin-bottom: 14px;
-    margin-left: -15px;
-    padding: 10px 15px;
+    margin-left: -10px;
+    padding: 10px 10px;
 
     border-top: 1px solid transparent;
     border-bottom: 1px solid transparent;
@@ -5889,8 +5889,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn
     {
         float: left;
 
-        margin-right: 15px;
-        margin-left: 15px;
+        margin-right: 10px;
+        margin-left: 10px;
     }
 }
 @media (min-width: 768px)
@@ -5903,7 +5903,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn
     {
         float: right !important;
 
-        margin-right: -15px;
+        margin-right: -10px;
     }
     .navbar-right ~ .navbar-right
     {
@@ -8937,7 +8937,9 @@ a
 }
 a:hover
 {
-    color: #fefefe;
+    text-decoration: inherit;
+
+    color: #e1bb9a;
 }
 h1,
 h2,
@@ -8996,7 +8998,7 @@ h6
 {
     width: 100%;
     height: 2px;
-    margin: 20px 0;
+    margin: 0 0 20px;
 
     color: #e1bb9a;
     border-color: #e1bb9a;
@@ -9004,15 +9006,103 @@ h6
 
     size: 2px;
 }
+.mbr-hr--black
+{
+    color: #212121;
+    border-color: #212121;
+}
 .mbr-footer__list
 {
     padding: 0;
 
     list-style: none;
 }
-.mbr-footer_row
+.mbr-footer__list--socials
+{
+    text-decoration: underline;
+}
+.mbr-footer__logo-row
 {
     padding: 30px 0 40px 0;
+}
+.mbr-footer__links
+{
+    padding-bottom: 40px;
+}
+.mbr-form
+{
+    margin-bottom: 40px;
+}
+.mbr-form .form-control
+{
+    min-height: 60px;
+    margin-bottom: 31px;
+
+    border: 0;
+    border-radius: 0;
+}
+.mbr-form .form-control:focus
+{
+    box-shadow: none;
+}
+.mbr-btn
+{
+    padding: 27px 100px 29px;
+
+    text-transform: uppercase;
+
+    color: #fefefe;
+    border: 2px solid #e1bb9a;
+    border-radius: 0;
+    background-color: transparent;
+}
+.mbr-btn:hover
+{
+    color: #212121;
+    background-color: #e1bb9a;
+}
+.underline
+{
+    text-decoration: underline;
+}
+.nomargin
+{
+    margin: 0;
+}
+.nopadding
+{
+    padding: 0;
+}
+.padding-top
+{
+    padding-top: 20px;
+}
+.fullwidth
+{
+    width: 100%;
+}
+.bg-light-grey
+{
+    background-color: #f7f7f7;
+}
+.mbr-main-anim
+{
+    height: 100vh;
+}
+#mbr-video-main
+{
+    position: absolute;
+    z-index: -100;
+    top: 50%;
+    left: 50%;
+
+    width: auto;
+    min-width: 100%;
+    height: 100vh;
+    min-height: 100%;
+
+    -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
 }
 .mbr-find-answer
 {
@@ -9135,7 +9225,322 @@ h6
     height: 100%;
     padding: 0 100px;
 }
+#mbr-clients-slider .owl-item div
+{
+    height: 100%;
+}
+@media screen and (max-width: 1600px)
+{
+    #mbr-clients-slider .owl-item
+    {
+        height: 90px;
+        padding: 0 50px;
+    }
+}
 #mbr-clients-slider img
 {
+    height: 100%;
+}
+@media screen and (max-width: 1600px)
+{
+    #mbr-clients-slider
+    {
+        height: 400px;
+    }
+}
+#mbr-map
+{
+    left: 20px;
+
     width: 100%;
+}
+.mbr-blog__main-post
+{
+    color: #212121;
+}
+.mbr-blog__main-post img
+{
+    width: 100%;
+    margin-top: 20px;
+}
+.mbr-blog__main-post span
+{
+    display: block;
+
+    margin: 40px 0;
+
+    color: #e1bb9a;
+}
+.mbr-blog__main-post h1
+{
+    margin-bottom: 90px;
+
+    color: #212121;
+}
+.mbr-blog__post
+{
+    min-height: 700px;
+
+    color: #212121;
+}
+.mbr-blog__post h1
+{
+    margin-bottom: 50px;
+
+    color: #212121;
+}
+.mbr-blog__post img
+{
+    width: 100%;
+}
+.mbr-blog__post span
+{
+    display: block;
+
+    margin: 30px 0;
+
+    color: #e1bb9a;
+}
+.mbr-banner
+{
+    display: inline-table;
+
+    width: 100%;
+    min-height: 720px;
+
+    text-align: center;
+
+    background-image: url(../img/images/1680x720.png);
+    background-position: center;
+    background-size: cover;
+}
+.mbr-banner h1
+{
+    display: table-cell;
+
+    padding: 0 30%;
+
+    vertical-align: middle;
+
+    color: #fefefe;
+}
+.mbr-banner span
+{
+    position: absolute;
+    top: 660px;
+
+    width: 100%;
+
+    color: #e1bb9a;
+}
+.mbr-article__controls
+{
+    width: calc(100% / 7 * 4 );
+    margin: auto;
+}
+.mbr-article__controls img
+{
+    margin-top: -50px;
+}
+.mbr-article__controls span
+{
+    display: inline-block;
+}
+.mbr-article__controls a
+{
+    display: inline-block;
+
+    text-decoration: none;
+
+    color: #212121;
+}
+.mbr-article__controls a:last-child img
+{
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+}
+.mbr-article__controls a:last-child
+{
+    float: right;
+}
+.mbr-article__content
+{
+    width: calc(100% / 7 * 4 );
+    margin: auto;
+
+    color: #212121;
+}
+.mbr-projects__filter ul
+{
+    padding: 0;
+
+    list-style: none;
+
+    -webkit-columns: 2;
+       -moz-columns: 2;
+            columns: 2;
+}
+.mbr-project__start-banner
+{
+    width: 100%;
+    min-height: 945px;
+
+    background-image: url(../img/images/2560x945.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.mbr-project__start-banner > div
+{
+    padding-top: 450px;
+}
+.mbr-project__steps
+{
+    padding: 54px 0 124px;
+
+    background-color: #232323;
+}
+.mbr-project__steps ul
+{
+    padding: 0;
+
+    list-style: none;
+}
+.mbr-project__steps li
+{
+    cursor: pointer;
+}
+.mbr-project__slider,
+.mbr-project__image,
+.mbr-project__images
+{
+    padding: 134px 0 245px;
+}
+.mbr-project__slider h1,
+.mbr-project__image h1,
+.mbr-project__images h1
+{
+    margin-bottom: 47px;
+}
+.mbr-project__slider h2,
+.mbr-project__image h2,
+.mbr-project__images h2
+{
+    margin-bottom: 80px;
+}
+.mbr-project__slider .content,
+.mbr-project__image .content,
+.mbr-project__images .content
+{
+    margin-bottom: 64px;
+}
+.mbr-project__slider img,
+.mbr-project__image img,
+.mbr-project__images img
+{
+    width: 100%;
+}
+.mbr-project__slider label,
+.mbr-project__image label,
+.mbr-project__images label
+{
+    max-width: 490px;
+    margin-top: 30px;
+}
+.mbr-project-slider .owl-nav > div
+{
+    position: absolute;
+    top: 0;
+    left: -240px;
+
+    width: 240px;
+    height: 100%;
+
+    background-image: url(../img/svg/arrow-left-bronse.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 37px;
+}
+.mbr-project-slider .owl-nav > div:last-child
+{
+    right: -240px;
+    left: initial;
+
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+    -webkit-transform-origin: 50% 50%;
+            transform-origin: 50% 50%;
+}
+.mbr-project__light
+{
+    color: #212121;
+    background-color: #f7f7f7;
+}
+.mbr-project__light h1
+{
+    color: #e1bb9a;
+}
+.mbr-project__light h2
+{
+    color: #212121;
+}
+.mbr-project__light .mbr-project-slider .owl-nav > div
+{
+    background-image: url(../img/svg/arrow-left-dark.svg);
+}
+.mbr-project__dark
+{
+    color: #a6a4a4;
+    background-color: #232323;
+}
+.mbr-project__dark h1
+{
+    color: #e1bb9a;
+}
+.mbr-project__dark h2
+{
+    color: #e1bb9a;
+}
+.mbr-project__double-imgs > div
+{
+    padding: 0;
+}
+.mbr-project__double-imgs > div:first-child
+{
+    padding-right: 10px;
+}
+.mbr-project__double-imgs > div:last-child
+{
+    padding-left: 10px;
+}
+#mbr-project__timeline
+{
+    position: fixed;
+    top: 105px;
+    left: 40px;
+
+    color: #787676;
+}
+#mbr-project__timeline ul
+{
+    padding: 0;
+
+    list-style: none;
+
+    border-left: 2px solid #787676;
+}
+#mbr-project__timeline li
+{
+    margin-bottom: 100px;
+    margin-left: -4px;
+    padding-left: 23px;
+
+    border-left: 6px solid #787676;
+}
+#mbr-project__timeline li.active
+{
+    color: #e1bb9a;
+    border-color: #c39873;
 }

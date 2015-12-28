@@ -7,8 +7,8 @@ body{
 a{
   color: @white;
   &:hover{
-    color:@white;
-
+    color:@bronse;
+    text-decoration: inherit;
   }
 }
 h1,h2,h3,h4,h5,h6{
@@ -48,17 +48,71 @@ h1,h2,h3,h4,h5,h6{
 }
 .mbr-hr{
   width: 100%;
-  margin: 20px 0;
+  margin: 0 0 20px;
   height: 2px;
   border-top: 2px solid;
   border-color: @bronse;
   color: @bronse;
   size: 2px;
+  &--black{
+    border-color: @dark;
+    color: @dark;
+  }
 }
 .mbr-footer__list{
   list-style: none;
   padding: 0;
+  &--socials{
+    text-decoration: underline;
+  }
 }
-.mbr-footer_row{
+.mbr-footer__logo-row{
   padding: 30px 0 40px 0;
+}
+.mbr-footer__links{
+  padding-bottom: 40px;
+}
+.mbr-form{
+  margin-bottom: 40px;
+  .form-control{
+    min-height: 60px;
+    margin-bottom: 31px;
+    border: 0;
+    border-radius: 0;
+    &:focus{
+      box-shadow: none;
+    }
+  }
+}
+.mbr-btn{
+  background-color: transparent;
+  border: 2px solid @bronse;
+  border-radius: 0;
+  color: @white;
+  padding: 27px 100px 29px;
+  text-transform: uppercase;
+  &:hover{
+    color: @dark;
+    background-color: @bronse;
+  }
+}
+// CSS STYLES CLASSES
+
+.underline{
+  text-decoration: underline;
+}
+.nomargin{
+  margin: 0;
+}
+.nopadding{
+  padding: 0;
+}
+.padding-top{
+  padding-top: @grid-padding*2;
+}
+.fullwidth{
+  width: 100%;
+}
+.bg-light-grey{
+  background-color: @light-grey;
 }
