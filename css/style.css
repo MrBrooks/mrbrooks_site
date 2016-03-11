@@ -8980,8 +8980,18 @@ The `.retina-sprites` mixin generates a CSS rule and media query for retina grou
 /* GENERAL TAGS */
 body
 {
+    font-size: 16px;
+    font-weight: 400;
+
     color: #fefefe;
     background-color: #212121;
+}
+@media screen and (max-width: 1600px)
+{
+    body
+    {
+        font-size: 14px;
+    }
 }
 a
 {
@@ -9002,6 +9012,20 @@ h6
 {
     color: #e1bb9a;
 }
+h1
+{
+    font-size: 36px;
+    font-weight: 400;
+
+    margin-bottom: 20px;
+}
+@media screen and (max-width: 1600px)
+{
+    h1
+    {
+        font-size: 24px;
+    }
+}
 /* GENERAL CLASSES */
 .mbr-container
 {
@@ -9012,9 +9036,17 @@ h6
 {
     width: 100%;
     height: 140px;
-    padding: 23px 30px;
+    padding: 58px 30px;
 
     background-color: transparent;
+}
+@media screen and (max-width: 1600px)
+{
+    .mbr-header
+    {
+        height: 70px;
+        padding: 23px 30px;
+    }
 }
 .mbr-header__logo
 {
@@ -9149,6 +9181,13 @@ h6
 {
     height: calc(100vh - 140px);
 }
+@media screen and (max-width: 1600px)
+{
+    #mbr-main-anim
+    {
+        height: calc(100vh - 70px);
+    }
+}
 #mbr-video-main
 {
     position: fixed;
@@ -9179,6 +9218,18 @@ h6
                 transform: translateY(55px);
     }
 }
+.mbr-portfolio
+{
+    display: inline-block;
+
+    width: 100%;
+}
+.mbr-portfolio .mbr-portfolio__item
+{
+    display: inline-block;
+    float: left;
+    overflow: hidden;
+}
 .mbr-find-answer
 {
     position: absolute;
@@ -9205,97 +9256,13 @@ h6
 {
     float: right;
 }
-.mbr-portfolio__first-block
-{
-    display: -webkit-inline-flex;
-    display: -ms-inline-flexbox;
-    display:         inline-flex;
-
-    width: 100%;
-}
-.mbr-portfolio__first-block img
-{
-    width: 100%;
-}
-.mbr-portfolio__first-block .mbr-portfolio__item
-{
-    padding: 10px;
-}
-.mbr-portfolio__first-block .small-block
-{
-    display: -webkit-inline-flex;
-    display: -ms-inline-flexbox;
-    display:         inline-flex;
-}
-.mbr-portfolio__center-block
-{
-    display: -webkit-inline-flex;
-    display: -ms-inline-flexbox;
-    display:         inline-flex;
-
-    width: 100%;
-}
-.mbr-portfolio__center-block img
-{
-    width: 100%;
-}
-.mbr-portfolio__center-block .mbr-portfolio__item
-{
-    padding: 10px;
-}
-.mbr-portfolio__center-block .mbr-portfolio__item:nth-child(2)
-{
-    -webkit-flex-grow: 2;
-    -ms-flex-positive: 2;
-            flex-grow: 2;
-}
-.mbr-portfolio__left-block
-{
-    display: -webkit-inline-flex;
-    display: -ms-inline-flexbox;
-    display:         inline-flex;
-
-    width: 100%;
-}
-.mbr-portfolio__left-block img
-{
-    width: 100%;
-}
-.mbr-portfolio__left-block .mbr-portfolio__item
-{
-    padding: 10px;
-}
-.mbr-portfolio__left-block .mbr-portfolio__item:nth-child(1)
-{
-    -webkit-flex-grow: 2;
-    -ms-flex-positive: 2;
-            flex-grow: 2;
-}
-.mbr-portfolio__right-block
-{
-    display: -webkit-inline-flex;
-    display: -ms-inline-flexbox;
-    display:         inline-flex;
-
-    width: 100%;
-}
-.mbr-portfolio__right-block img
-{
-    width: 100%;
-}
-.mbr-portfolio__right-block .mbr-portfolio__item
-{
-    padding: 10px;
-}
-.mbr-portfolio__right-block .mbr-portfolio__item:nth-child(3)
-{
-    -webkit-flex-grow: 2;
-    -ms-flex-positive: 2;
-            flex-grow: 2;
-}
 .mbr-portfolio__item
 {
     position: relative;
+}
+.mbr-portfolio__item img
+{
+    width: 100%;
 }
 .mbr-portfolio__item:hover img
 {
@@ -9487,12 +9454,24 @@ h6
        -moz-columns: 2;
             columns: 2;
 }
+.mbr-project
+{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.mbr-project ul
+{
+    padding: 0;
+
+    list-style: none;
+}
 .mbr-project__start-banner
 {
     width: 100%;
     min-height: 945px;
 
-    background-image: url(../img/images/2560x945.png);
+    background-image: url('../img/images/test/banner.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -9515,6 +9494,8 @@ h6
 }
 .mbr-project__steps li
 {
+    margin-bottom: 20px;
+
     cursor: pointer;
 }
 .mbr-project__slider,
@@ -9656,6 +9637,10 @@ h6
 
     color: #e1bb9a;
     border-color: #c39873;
+}
+#mbr-project__timeline li:hover
+{
+    color: #e1bb9a;
 }
 @media screen and (max-width: 1024px)
 {
