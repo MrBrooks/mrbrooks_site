@@ -3,6 +3,11 @@
 body{
   background-color: @dark;
   color: @white;
+  font-size: 16px;
+  font-weight: 400;
+  @media screen and (max-width: @screen-desktop){
+    font-size: 14px;
+  }
 }
 a{
   color: @white;
@@ -14,6 +19,14 @@ a{
 h1,h2,h3,h4,h5,h6{
   color: @bronse;
 }
+h1{
+  font-size: 36px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  @media screen and (max-width: @screen-desktop){
+    font-size: 24px;
+  }
+}
 
 /* GENERAL CLASSES */
 .mbr-container{
@@ -24,7 +37,11 @@ h1,h2,h3,h4,h5,h6{
   width: 100%;
   height: @menu-height*2;
   background-color: transparent;
-  padding: 23px 30px;
+  padding: 58px 30px;
+  @media screen and (max-width: @screen-desktop){
+    height: @menu-height;
+    padding: 23px 30px;
+  }
 }
 .mbr-header__logo{
   width: 145px;

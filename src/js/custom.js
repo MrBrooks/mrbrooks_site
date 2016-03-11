@@ -17,6 +17,7 @@ $(document).ready(function() {
     dots: false,
     nav: false
   });
+  
   $(".mbr-project-slider").owlCarousel({
     loop: true,
     items: 1,
@@ -25,6 +26,17 @@ $(document).ready(function() {
     dots: false,
     nav: true,
     navText: [" ", " "]
+  });
+
+  $(".mbr-portfolio").galleryGrid({
+    margin: 20,
+    // selectGallery: ".gallery",
+    selectFirst: ".mbr-portfolio__first-block",
+    selectLeft: ".mbr-portfolio__left-block",
+    selectCenter: ".mbr-portfolio__center-block",
+    selectRight: ".mbr-portfolio__right-block",
+    selectItem: ".mbr-portfolio__item",
+    addGalleryMargin: false
   });
   function loadOptimVideo(selector){
     var vid = $(selector); 
@@ -35,7 +47,7 @@ $(document).ready(function() {
           url;
       var urls = vid.attr("data-urls").split(",");
 
-      console.log(urls);
+      // console.log(urls);
       if(width < 1280){
         url = urls[0];
       } else if(width > 1920){
@@ -105,7 +117,7 @@ $(document).ready(function() {
     function videoEnd(){
       currPoint = keypoints.length - 1;
       $("body").css("overflow", "auto");
-      $("#mbr-video-main").fadeOut(100);
+      jvid.fadeOut(100);
       $('html, body').animate({
         scrollTop: $(window).height()
       }, 1000,function(){
@@ -114,7 +126,7 @@ $(document).ready(function() {
     }
     function videoStart(){
       $("body").css("overflow", "hidden");
-      $("#mbr-video-main").fadeIn(100);
+      jvid.fadeIn(100);
     }
     function goToKeypoint(index){
       vid.currentTime = keypoints[index];
@@ -182,10 +194,10 @@ $(document).ready(function() {
             return 0;
           }
           if(event.originalEvent.deltaY > 0){
-            console.log("Try scrolling...Next");
+            // console.log("Try scrolling...Next");
             playToNextPoint();
           } else{
-            console.log("Try scrolling...Prev");
+            // console.log("Try scrolling...Prev");
             playToPrevPoint();
           }
           flag = false;
@@ -208,7 +220,9 @@ $(document).ready(function() {
     //   }
     // }
   }
-  videoScrolling([5,10,20],200);
+  if ($("#mbr-video-main").length > 0){
+    videoScrolling([5,10,20],200);
+  }
   function createProjectTimeline(){
     var sections = $("section[data-section-name]");
     if( sections.length > 0){
@@ -311,8 +325,8 @@ $(document).ready(function() {
         scrollTimer = setTimeout(function(){
           current_scroll = $("body").scrollTop();
           current_section = whatSection();
-          console.log(current_scroll);
-          console.log(current_section);
+          // console.log(current_scroll);
+          // console.log(current_section);
           updateView();
         },50);
       });
@@ -329,18 +343,18 @@ $(document).ready(function() {
   }
   createProjectTimeline();
 
-  function PortfolioGrid(options){
-    var opt = $.extend({
-      magrin : 20,
-      selectFirst : ".mbr-portfolio__first-block",
-      selectCenter : ".mbr-portfolio__center-block",
-      selectLeft : ".mbr-portfolio__left-block",
-      selectRight : ".mbr-portfolio__right-block",
-      selectItem: ".mbr-portfolio__item"
-    },options);
+  // function PortfolioGrid(options){
+  //   var opt = $.extend({
+  //     magrin : 20,
+  //     selectFirst : ".mbr-portfolio__first-block",
+  //     selectCenter : ".mbr-portfolio__center-block",
+  //     selectLeft : ".mbr-portfolio__left-block",
+  //     selectRight : ".mbr-portfolio__right-block",
+  //     selectItem: ".mbr-portfolio__item"
+  //   },options);
 
     
-  }
+  // }
 
   function suffleLetters(opt){
     var def_opt = $.extend({
@@ -403,7 +417,7 @@ $(document).ready(function() {
 
           if (def_opt.length != content.length){
             def_opt.length = content.length;
-            console.log("Warning! Lengths don't match");
+            // console.log("Warning! Lengths don't match");
           }
           var iterator = 0;
           for(var i = 0; i < def_opt.iterations;i++){

@@ -6,6 +6,9 @@
 }
 #mbr-main-anim{
   height: ~"calc(100vh - 140px)";
+  @media screen and (max-width: @screen-desktop){
+    height: ~"calc(100vh - 70px)";
+  }
 }
 #mbr-video-main{
   position: fixed;
@@ -35,6 +38,18 @@
   from { transform: translateY(0px) }
   to { transform: translateY(55px) }
 }
+
+//grid styles
+.mbr-portfolio{
+  width: 100%;
+  display: inline-block;
+  .mbr-portfolio__item{
+    float: left;
+    display: inline-block;
+    overflow: hidden;
+  }
+
+}
 .mbr-find-answer{
   position: absolute;
   bottom: 0;
@@ -55,59 +70,64 @@
     }
   }
 }
-.mbr-portfolio__first-block{
-  width: 100%;
-  display: inline-flex;
-  img{
-    width: 100%;
-  }
-  .mbr-portfolio__item{
-    padding: 10px;
-  }
-  .small-block{
-    display: inline-flex;
-  }
-}
-.mbr-portfolio__center-block{
-  width: 100%;
-  display: inline-flex;
-  img{
-    width: 100%;
-  }
-  .mbr-portfolio__item{
-    padding: 10px;
-    &:nth-child(2){
-      flex-grow: 2;
-    }
-  }
-}
-.mbr-portfolio__left-block{
-  width: 100%;
-  display: inline-flex;
-  img{
-    width: 100%;
-  }
-  .mbr-portfolio__item{
-    padding: 10px;
-    &:nth-child(1){
-      flex-grow: 2;
-    }
-  }
-}
-.mbr-portfolio__right-block{
-  width: 100%;
-  display: inline-flex;
-  img{
-    width: 100%;
-  }
-  .mbr-portfolio__item{
-    padding: 10px;
-    &:nth-child(3){
-      flex-grow: 2;
-    }
-  }
-}
+// .mbr-portfolio__first-block{
+//   width: 100%;
+//   display: inline-flex;
+//   img{
+//     width: 100%;
+//   }
+//   .mbr-portfolio__item{
+//     padding: 10px;
+//   }
+//   .small-block{
+//     display: inline-flex;
+//   }
+// }
+// .mbr-portfolio__center-block{
+//   width: 100%;
+//   display: inline-flex;
+//   img{
+//     width: 100%;
+//   }
+//   .mbr-portfolio__item{
+//     padding: 10px;
+//     &:nth-child(2){
+//       flex-grow: 2;
+//     }
+//   }
+// }
+// .mbr-portfolio__left-block{
+//   width: 100%;
+//   display: inline-flex;
+//   img{
+//     width: 100%;
+//   }
+//   .mbr-portfolio__item{
+//     padding: 10px;
+//     &:nth-child(1){
+//       flex-grow: 2;
+//     }
+//   }
+// }
+// .mbr-portfolio__right-block{
+//   width: 100%;
+//   display: inline-flex;
+//   img{
+//     width: 100%;
+//   }
+//   .mbr-portfolio__item{
+//     padding: 10px;
+//     &:nth-child(3){
+//       flex-grow: 2;
+//     }
+//   }
+// }
+//content styles
 .mbr-portfolio__item{
+  // background-color: gray;
+  img{
+    width: 100%;
+  }
   position: relative;
   &:hover img{
     opacity: 0.3;

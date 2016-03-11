@@ -14980,6 +14980,163 @@ if (typeof jQuery === 'undefined') {
   };
 
 })(jQuery, window, document);
+(function( $ ){
+  
+  var grid = "galleryGrid",
+      self = null,
+      defaults = {
+        margin: 20,
+        selectGallery: ".gallery",
+        selectFirst: ".first",
+        selectLeft: ".left",
+        selectCenter: ".center",
+        selectRight: ".right",
+        selectItem: ".item",
+        addGalleryMargin: true
+      };
+  
+  function Grid(element, options){
+    self = this;
+    this.element = $(element);
+    this.opt = $.extend({}, defaults, options);
+    this._defaults = defaults;
+    this._name = grid;
+    this.init();
+  }
+  
+  Grid.prototype.evalSizes = function(){
+    self.width = self.width - (self.width % 4); //люфт 3 пикселя 
+    self.X = (self.width - 3*self.opt.margin)/2; 
+    self.Y = (self.width - 5*self.opt.margin)/4;
+  }
+  
+  Grid.prototype.setMargins = function (){
+    if( self.opt.addGalleryMargin ){
+      self.element
+        .css("margin", Math.round(self.opt.margin/2)+"px")
+        .find(self.opt.selectItem)
+        .css("margin", Math.round(self.opt.margin/2)+"px");
+    } else {
+      self.element
+        .find(self.opt.selectItem)
+        .css("margin", Math.round(self.opt.margin/2)+"px");
+    }
+  }
+  
+  Grid.prototype.setSizes = function(){
+    self.evalSizes();
+    $(self.opt.selectFirst).find(self.opt.selectItem).each(function(index,el){
+      switch(index){
+        case 0:
+
+          $(this).width(self.X);
+          $(this).height(self.X);
+          break
+        case 1:
+          $(this).width(self.X);
+          $(this).height(self.Y);
+          break
+        case 2:
+          $(this).width(self.Y);
+          $(this).height(self.Y);
+          break
+        case 3:
+          $(this).width(self.Y);
+          $(this).height(self.Y);
+          break
+        default: console.log("Too much elements in " + self.opt.selectFirst);
+      }
+    });
+    $(self.opt.selectLeft).each(function(){
+      $(this).find(self.opt.selectItem).each(function(index){
+        switch(index){
+          case 0:
+            $(this).width(self.X);
+            $(this).height(self.Y);
+            break
+          case 1:
+            $(this).width(self.Y);
+            $(this).height(self.Y);
+            break
+          case 2:
+            $(this).width(self.Y);
+            $(this).height(self.Y);
+            break
+          default: console.log("Too much elements in " + self.opt.selectLeft);
+        }
+      });    
+    }); 
+    $(self.opt.selectCenter).each(function(){
+      $(this).find(self.opt.selectItem).each(function(index){
+        switch(index){
+          case 0:
+            $(this).width(self.Y);
+            $(this).height(self.Y);
+            break
+          case 1:
+            $(this).width(self.X);
+            $(this).height(self.Y);
+            break
+          case 2:
+            $(this).width(self.Y);
+            $(this).height(self.Y);
+            break
+          default: console.log("Too much elements in " + self.opt.selectCenter);
+        }
+      });    
+    });
+    $(self.opt.selectRight).each(function(){
+      $(this).find(self.opt.selectItem).each(function(index){
+        switch(index){
+          case 0:
+            $(this).width(self.Y);
+            $(this).height(self.Y);
+            break
+          case 1:
+            $(this).width(self.Y);
+            $(this).height(self.Y);
+            break
+          case 2:
+            $(this).width(self.X);
+            $(this).height(self.Y);
+            break
+          default: console.log("Too much elements in " + self.opt.selectRight);
+        }
+      });    
+    });
+  }
+  
+  Grid.prototype.update = function(){
+    self.width = $(window).width();
+    self.X = 0;
+    self.Y = 0;
+    self.setMargins();
+    self.evalSizes();
+    self.setSizes();
+  }
+  
+  Grid.prototype.onresize = function(){
+    var timer;
+    $(window).on("resize", function(){
+      clearTimeout(timer);
+      timer = setTimeout(self.init, 500);
+    });
+  }
+  
+  Grid.prototype.init = function(){
+    self.update();
+    self.onresize();
+  }
+
+  $.fn.galleryGrid = function( options ) {  
+    return this.each(function() {
+      if(!$.data(this, "plugin_" + grid)) {
+        $.data(this, "plugin_" + grid, new Grid(this, options));
+      }
+    });  
+  };
+  
+})( jQuery );
 /**************************************/
 /* Custom JavaScript files supervisor */
 /**************************************/
@@ -14999,6 +15156,7 @@ $(document).ready(function() {
     dots: false,
     nav: false
   });
+  
   $(".mbr-project-slider").owlCarousel({
     loop: true,
     items: 1,
@@ -15007,6 +15165,17 @@ $(document).ready(function() {
     dots: false,
     nav: true,
     navText: [" ", " "]
+  });
+
+  $(".mbr-portfolio").galleryGrid({
+    margin: 20,
+    // selectGallery: ".gallery",
+    selectFirst: ".mbr-portfolio__first-block",
+    selectLeft: ".mbr-portfolio__left-block",
+    selectCenter: ".mbr-portfolio__center-block",
+    selectRight: ".mbr-portfolio__right-block",
+    selectItem: ".mbr-portfolio__item",
+    addGalleryMargin: false
   });
   function loadOptimVideo(selector){
     var vid = $(selector); 
@@ -15017,7 +15186,7 @@ $(document).ready(function() {
           url;
       var urls = vid.attr("data-urls").split(",");
 
-      console.log(urls);
+      // console.log(urls);
       if(width < 1280){
         url = urls[0];
       } else if(width > 1920){
@@ -15087,7 +15256,7 @@ $(document).ready(function() {
     function videoEnd(){
       currPoint = keypoints.length - 1;
       $("body").css("overflow", "auto");
-      $("#mbr-video-main").fadeOut(100);
+      jvid.fadeOut(100);
       $('html, body').animate({
         scrollTop: $(window).height()
       }, 1000,function(){
@@ -15096,7 +15265,7 @@ $(document).ready(function() {
     }
     function videoStart(){
       $("body").css("overflow", "hidden");
-      $("#mbr-video-main").fadeIn(100);
+      jvid.fadeIn(100);
     }
     function goToKeypoint(index){
       vid.currentTime = keypoints[index];
@@ -15164,10 +15333,10 @@ $(document).ready(function() {
             return 0;
           }
           if(event.originalEvent.deltaY > 0){
-            console.log("Try scrolling...Next");
+            // console.log("Try scrolling...Next");
             playToNextPoint();
           } else{
-            console.log("Try scrolling...Prev");
+            // console.log("Try scrolling...Prev");
             playToPrevPoint();
           }
           flag = false;
@@ -15190,7 +15359,9 @@ $(document).ready(function() {
     //   }
     // }
   }
-  videoScrolling([5,10,20],200);
+  if ($("#mbr-video-main").length > 0){
+    videoScrolling([5,10,20],200);
+  }
   function createProjectTimeline(){
     var sections = $("section[data-section-name]");
     if( sections.length > 0){
@@ -15293,8 +15464,8 @@ $(document).ready(function() {
         scrollTimer = setTimeout(function(){
           current_scroll = $("body").scrollTop();
           current_section = whatSection();
-          console.log(current_scroll);
-          console.log(current_section);
+          // console.log(current_scroll);
+          // console.log(current_section);
           updateView();
         },50);
       });
@@ -15311,18 +15482,18 @@ $(document).ready(function() {
   }
   createProjectTimeline();
 
-  function PortfolioGrid(options){
-    var opt = $.extend({
-      magrin : 20,
-      selectFirst : ".mbr-portfolio__first-block",
-      selectCenter : ".mbr-portfolio__center-block",
-      selectLeft : ".mbr-portfolio__left-block",
-      selectRight : ".mbr-portfolio__right-block",
-      selectItem: ".mbr-portfolio__item"
-    },options);
+  // function PortfolioGrid(options){
+  //   var opt = $.extend({
+  //     magrin : 20,
+  //     selectFirst : ".mbr-portfolio__first-block",
+  //     selectCenter : ".mbr-portfolio__center-block",
+  //     selectLeft : ".mbr-portfolio__left-block",
+  //     selectRight : ".mbr-portfolio__right-block",
+  //     selectItem: ".mbr-portfolio__item"
+  //   },options);
 
     
-  }
+  // }
 
   function suffleLetters(opt){
     var def_opt = $.extend({
@@ -15385,7 +15556,7 @@ $(document).ready(function() {
 
           if (def_opt.length != content.length){
             def_opt.length = content.length;
-            console.log("Warning! Lengths don't match");
+            // console.log("Warning! Lengths don't match");
           }
           var iterator = 0;
           for(var i = 0; i < def_opt.iterations;i++){
