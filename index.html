@@ -79,15 +79,20 @@
         <header>
   <!-- (.mbr-header>div.logo>img^+.mbr-nav>ul>(li>a)*4) -->
   <div class="mbr-header">
-    <div class="mbr-header__logo"><a href="index.html"><img src="img/svg/logo.svg" alt=""></a></div>
     <div class="mbr-nav">
       <ul>
         <li><a class="shuffleOnHover" href="projects.html">Проекты</a></li>
         <li><a class="shuffleOnHover" href="blog.html">Блог</a></li>
         <li><a class="shuffleOnHover" href="contacts.html">Контакты</a></li>
         <li><a class="shuffleOnHover" href="">EN</a></li>
+        <li id="mobile-menu-btn"><div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div></li>
       </ul>
     </div>
+    <div class="mbr-header__logo"><a href="index.html"><img src="img/svg/logo.svg" alt=""></a></div>
   </div>
 </header>
 
@@ -106,7 +111,14 @@
       <img src="img/svg/arrow-down.svg" alt="">
     </div>
   </div>
-  <button id="test-btn">Click me!</button>
+  <div id="down-btn">Пропустить</div>
+</section>
+
+          <section id="mbr-main-private">
+  <div class="shuffle">
+    <div>private</div>
+    <div>marketing</div>
+  </div>
 </section>
 
           <section>
@@ -114,65 +126,101 @@
     <div class="mbr-portfolio__first-block">
       <div class="mbr-portfolio__item withripple">
         <a href="project.html">
-          <img src="http://placehold.it/1250/fff/111">
+          <img class="pic" src="http://placehold.it/1250/fff/111">
           <div class="onhover">
             <!-- h3.mbr-h3{Lorem ipsum dolor}+p.desc{Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!}+.more>span{Далее}+.arrow -->
             <h3 class="mbr-h3">Lorem ipsum dolor</h3>
             <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!</p>
-            <div class="more">
-              <span>Далее</span>
-              <div class="arrow"></div>
-            </div>
+            <a href="project-test.html">
+              <div class="more">
+                <img class="arrow" src="/img//svg/arrow-right-bronse.svg" alt="">
+                <span>Далее</span>
+              </div>
+            </a>
           </div>
         </a>
       </div>
       <div class="mbr-portfolio__item">
-        <img src="http://placehold.it/1250x615/fff/111">
+        <!-- <img class="pic" src="http://placehold.it/1250x615/fff/111"> -->
+        <a href="article.html">
+        <div class="article">
+          <h3 class="mbr-h3">Lorem ipsum dolor</h3>
+          <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!</p>
+          <a href="project-test.html">
+            <div class="more">
+              <img class="arrow" src="/img//svg/arrow-right-bronse.svg" alt="">
+              <span>Далее</span>
+            </div>
+          </a>
+        </div></a>
+      </div>
+      <div class="mbr-portfolio__item ">
+        <a href="project.html">
+          <img class="pic" src="http://placehold.it/615/fff/111">
+          <div class="onhover small">
+            <!-- h3.mbr-h3{Lorem ipsum dolor}+p.desc{Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!}+.more>span{Далее}+.arrow -->
+            <h3 class="mbr-h3">Lorem ipsum dolor</h3>
+            <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!</p>
+            <a href="project-test.html">
+              <div class="more">
+                <img class="arrow" src="/img//svg/arrow-right-bronse.svg" alt="">
+                <span>Далее</span>
+              </div>
+            </a>
+          </div>
+        </a>
       </div>
       <div class="mbr-portfolio__item">
-        <img src="http://placehold.it/615/fff/111">
-      </div>
-      <div class="mbr-portfolio__item">
-        <img src="http://placehold.it/615/fff/111">
+        <img class="pic" src="http://placehold.it/615/fff/111">
       </div>
     </div>
     <div class="mbr-portfolio__center-block">
       <div class="mbr-portfolio__item">
-        <img src="http://placehold.it/615/fff/111">
+        <img class="pic" src="http://placehold.it/615/fff/111">
       </div>
       <div class="mbr-portfolio__item">
-        <img src="http://placehold.it/1250x615/fff/111">
+        <img class="pic" src="http://placehold.it/1250x615/fff/111">
       </div>
       <div class="mbr-portfolio__item">
-        <img src="http://placehold.it/615/fff/111">
+        <img class="pic" src="http://placehold.it/615/fff/111">
       </div>
     </div>
     <div class="mbr-portfolio__left-block">
       <div class="mbr-portfolio__item">
-        <img src="http://placehold.it/1250x615/fff/111">
+        <img class="pic" src="http://placehold.it/1250x615/fff/111">
       </div>
       <div class="mbr-portfolio__item">
-        <img src="http://placehold.it/615/fff/111">
+        <img class="pic" src="http://placehold.it/615/fff/111">
       </div>
       <div class="mbr-portfolio__item">
-        <img src="http://placehold.it/615/fff/111">
+        <img class="pic" src="http://placehold.it/615/fff/111">
       </div>
     </div>
     <div class="mbr-portfolio__right-block">
       <div class="mbr-portfolio__item">
-        <img src="http://placehold.it/615/fff/111">
+        <img class="pic" src="http://placehold.it/615/fff/111">
       </div>
       <div class="mbr-portfolio__item">
-        <img src="http://placehold.it/615/fff/111">
+        <img class="pic" src="http://placehold.it/615/fff/111">
       </div>
       <div class="mbr-portfolio__item">
-        <img src="http://placehold.it/1250x615/fff/111">
+        <img class="pic" src="http://placehold.it/1250x615/fff/111">
       </div>
     </div>
   </div>
-  <div class="mbr-clients">
+  <div class="row mbr-clients">
+    <div class="col-lg-3 col-md-3 col-sm-3"><img src="img/svg/Adidas.svg" alt=""></div>
+    <div class="col-lg-3 col-md-3 col-sm-3"><img src="img/svg/STRIDE.svg" alt=""></div>
+    <div class="col-lg-3 col-md-3 col-sm-3"><img src="img/svg/A3.svg" alt=""></div>
+    <div class="col-lg-3 col-md-3 col-sm-3"><img src="img/svg/Adidas.svg" alt=""></div>
+    <div class="col-lg-3 col-md-3 col-sm-3"><img src="img/svg/Adidas.svg" alt=""></div>
+    <div class="col-lg-3 col-md-3 col-sm-3"><img src="img/svg/Adidas.svg" alt=""></div>
+    <div class="col-lg-3 col-md-3 col-sm-3"><img src="img/svg/Adidas.svg" alt=""></div>
+    <div class="col-lg-3 col-md-3 col-sm-3"><img src="img/svg/Adidas.svg" alt=""></div>
+  </div>
+  <!-- <div class="mbr-clients">
     <div id="mbr-clients-slider">
-      <div><img src="img/svg/Adidas.svg" alt=""></div>
+      <div class="col-lg-3 col-md-3 col-sm-3"><img src="img/svg/Adidas.svg" alt=""></div>
       <div><img src="img/svg/STRIDE.svg" alt=""></div>
       <div><img src="img/svg/A3.svg" alt=""></div>
       <div><img src="img/svg/Adidas.svg" alt=""></div>
@@ -181,19 +229,19 @@
       <div><img src="img/svg/Adidas.svg" alt=""></div>
       <div><img src="img/svg/Adidas.svg" alt=""></div>
     </div>
-  </div>
+  </div> -->
 </section>
         </main>
 
         <footer>
 <div class="mbr-hr"></div>
 <div class="row mbr-footer__logo-row">
-  <div class="col-lg-2 col-lg-offset-1">
+  <div class="col-lg-2 col-md-2 col-sm-3 col-sm-offset-1 col-lg-offset-1">
     <img src="img/svg/logo_bronse.svg">
   </div>
 </div>
 <div class="row mbr-footer__links">
-  <div class="col-lg-2 col-lg-offset-1">
+  <div class="col-lg-2 col-md-2 col-sm-2 col-lg-offset-1 col-sm-offset-1">
     <ul class="mbr-footer__list">
       <li><a href="index.html">Главная</a></li>
       <li><a href="projects.html">Проекты</a></li>
@@ -201,10 +249,10 @@
       <li><a href="contacts.html">Контакты</a></li>
     </ul>
   </div>
-  <div class="col-lg-2 col-lg-offset-1">
+  <div class="col-lg-2 col-md-3 col-sm-3 col-lg-offset-1">
     <ul class="mbr-footer__list">
-      <li>8 (821) 900-11-63</li>
-      <li class="underline">info@mbrooks.ru</li>
+      <li><a href="tel:8-921-900-11-63">8 (821) 900-11-63</a></li>
+      <li class="underline"><a href="mailto:info@mbrooks.ru">info@mbrooks.ru</a></li>
       <li> &#160; </li>
       <li>г. Санкт-Петербург,</li>
       <li>Биржевой пер. 2-4,</li>
@@ -212,7 +260,7 @@
       <li>3-й этаж (мансарда)</li>
     </ul>
   </div>
-  <div class="col-lg-2 col-lg-offset-1">
+  <div class="col-lg-2 col-md-3 col-sm-3 col-lg-offset-1">
     <ul class="mbr-footer__list mbr-footer__list--socials">
       <li><a href="">Facebook</a></li>
       <li><a href="">Вконтакте</a></li>
@@ -222,8 +270,8 @@
       <li><a href="">Linkedin</a></li>
     </ul>
   </div>
-  <div class="col-lg-2 col-lg-offset-1">
-    © Mr. Brooks 2015
+  <div class="col-lg-2 col-lg-offset-1 col-md-2 col-sm-2">
+    <a href="mbrook.ru">© Mr. Brooks 2015</a>
   </div>
 </div>
 </footer>
