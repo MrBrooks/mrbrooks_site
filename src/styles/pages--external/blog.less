@@ -1,3 +1,9 @@
+#column-grid{
+  .column{
+    vertical-align: top;
+    display: inline-block;
+  }
+}
 .mbr-blog__main-post{
   color: @dark;
   img{
@@ -5,21 +11,42 @@
     margin-top: 20px;
   }
   span{
-    margin: 40px 0;
+    margin: 30px 0;
     display: block;
     color: @bronse;
+    @media screen and (max-width: @screen-desktop){
+      margin: 15px 0;
+    }
   }
-  h1{
+  h2{
+    margin-top: 0;
     margin-bottom: 90px;
+    font-size: 36px;
     color: @dark;
+    font-family: "ClearSansBold";
+    @media screen and (max-width: @screen-desktop){
+     font-size: 24px;
+    }
   }
+  
 }
 .mbr-blog__post{
   color: @dark;
-  min-height: 700px;
-  h1{
+  // min-height: 700px;
+  padding: 10px;
+  margin-bottom: 60px;
+  h2{
+    margin-top: 0;
     margin-bottom: 50px;
     color: @dark;
+    font-family: "ClearSansBold";
+    font-size: 32px;
+    @media screen and (max-width: @screen-desktop){
+     font-size: 24px;
+    }
+    @media screen and (max-width: @screen-tablet){
+     font-size: 20px;
+    }
   }
   img{
     width: 100%;
@@ -28,5 +55,11 @@
     margin: 30px 0;
     display: block;
     color: @bronse;
+    @media screen and (max-width: @screen-desktop){
+     margin: 15px 0;
+    }
+  }
+  @media screen and (max-width: @screen-desktop){
+    margin-bottom: 30px;
   }
 }

@@ -79,22 +79,68 @@
         <header>
   <!-- (.mbr-header>div.logo>img^+.mbr-nav>ul>(li>a)*4) -->
   <div class="mbr-header">
-    <div class="mbr-header__logo"><a href="index.html"><img src="img/svg/logo.svg" alt=""></a></div>
     <div class="mbr-nav">
       <ul>
         <li><a class="shuffleOnHover" href="projects.html">Проекты</a></li>
         <li><a class="shuffleOnHover" href="blog.html">Блог</a></li>
         <li><a class="shuffleOnHover" href="contacts.html">Контакты</a></li>
         <li><a class="shuffleOnHover" href="">EN</a></li>
+        <li id="mobile-menu-btn"><div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div></li>
       </ul>
     </div>
+    <div class="mbr-header__logo"><a href="index.html"><img src="img/svg/logo.svg" alt=""></a></div>
   </div>
 </header>
 
         <main class="mbr-container bg-light-grey nomargin fullwidth">
           <!-- .row>(.col-lg-8>(.mbr-banner>h1{Some text}+span{21.12.2015})+.mbr-article__controls+hr.mbr-hr+.mbr-article__content)+(.col-lg-4>(.col-lg-6.mbr-blog__post>(a[href="article.html"]>img[src="img/images/620x620.png"])+span{21.12.2015}+(a[href="article.html"]>h2{Выпуск "Личный контакт" с Тимуром Мухамедовым}))*6) -->
 <div class="row mbr-container">
-  <div class="col-lg-8 padding-top">
+  <div class="col-lg-8 padding-top col-md-12">
+    <div class="mbr-banner">
+      <span>21.12.2015</span>
+      <h1>Some text </h1>
+    </div>
+    <div class="mbr-article__controls">
+      <a href=""><div class="prev">
+        <img src="img/svg/arrow-left.svg" alt="">
+        <span>Предыдущая <br> запись</span>
+      </div></a>
+      <a href=""><div class="next">
+        <span>Следующая <br> запись</span>
+        <img src="img/svg/arrow-left.svg" alt="">
+      </div></a>
+    </div>
+    <hr class="mbr-hr mbr-hr--black">
+  </div>
+  <div class="col-lg-4 col-md-4 col-sm-4 nopadding padding-top mbr-resent-posts">
+    <div class="col-lg-6 mbr-blog__post">
+      <a href="article.html"><img src="img/images/620x620.png" alt=""></a>
+      <span>21.12.2015</span>
+      <a href="article.html">
+        <h2>Выпуск "Личный контакт" с Тимуром Мухамедовым</h2>
+      </a>
+    </div>
+    <div class="col-lg-6 mbr-blog__post">
+      <a href="article.html"><img src="img/images/620x620.png" alt=""></a>
+      <span>21.12.2015</span>
+      <a href="article.html">
+        <h2>Выпуск "Личный контакт" с Тимуром Мухамедовым</h2>
+      </a>
+    </div>
+  </div>
+  <div class="col-lg-8 padding-top col-md-8 col-sm-8">
+    <div class="mbr-article__content">
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis iure numquam tempore illum dolores neque quibusdam inventore impedit porro, quis modi magnam, rerum ex iste, nesciunt non a excepturi consequuntur. Laborum porro, perferendis debitis corrupti ut eligendi, modi facilis commodi dolorum libero amet est cupiditate. Optio, quidem. Mollitia dolores quia quo, sunt fugiat incidunt. Similique nulla, sit nihil eaque impedit nobis doloribus ab enim modi omnis laudantium officiis, soluta pariatur quibusdam maxime voluptatum harum quisquam sunt accusamus. Praesentium, maiores laboriosam, odio laborum, eum sit quaerat amet eius ipsum aliquid voluptates nemo rerum iste laudantium vitae ipsa. Obcaecati aliquam, sequi nostrum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis iure numquam tempore illum dolores neque quibusdam inventore impedit porro, quis modi magnam, rerum ex iste, nesciunt non a excepturi consequuntur. Laborum porro, perferendis debitis corrupti ut eligendi, modi facilis commodi dolorum libero amet est cupiditate. Optio, quidem. Mollitia dolores quia quo, sunt fugiat incidunt. Similique nulla, sit nihil eaque impedit nobis doloribus ab enim modi omnis laudantium officiis, soluta pariatur quibusdam maxime voluptatum harum quisquam sunt accusamus. Praesentium, maiores laboriosam, odio laborum, eum sit quaerat amet eius ipsum aliquid voluptates nemo rerum iste laudantium vitae ipsa. Obcaecati aliquam, sequi nostrum.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis iure numquam tempore illum dolores neque quibusdam inventore impedit porro, quis modi magnam, rerum ex iste, nesciunt non a excepturi consequuntur. Laborum porro, perferendis debitis corrupti ut eligendi, modi facilis commodi dolorum libero amet est cupiditate. Optio, quidem. Mollitia dolores quia quo, sunt fugiat incidunt. Similique nulla, sit nihil eaque impedit nobis doloribus ab enim modi omnis laudantium officiis, soluta pariatur quibusdam maxime voluptatum harum quisquam sunt accusamus. Praesentium, maiores laboriosam, odio laborum, eum sit quaerat amet eius ipsum aliquid voluptates nemo rerum iste laudantium vitae ipsa. Obcaecati aliquam, sequi nostrum.</p>
+    </div>
+  </div>
+
+  <!-- <div class="col-lg-8 padding-top col-md-12">
     <div class="mbr-banner">
       <span>21.12.2015</span>
       <h1>Some text </h1>
@@ -159,18 +205,18 @@
         <h3>Выпуск "Личный контакт" с Тимуром Мухамедовым</h3>
       </a>
     </div>
-  </div>
+  </div> -->
 </div>
         </main>
         <footer>
 <div class="mbr-hr"></div>
 <div class="row mbr-footer__logo-row">
-  <div class="col-lg-2 col-lg-offset-1">
+  <div class="col-lg-2 col-md-2 col-sm-3 col-sm-offset-1 col-lg-offset-1">
     <img src="img/svg/logo_bronse.svg">
   </div>
 </div>
 <div class="row mbr-footer__links">
-  <div class="col-lg-2 col-lg-offset-1">
+  <div class="col-lg-2 col-md-2 col-sm-2 col-lg-offset-1 col-sm-offset-1">
     <ul class="mbr-footer__list">
       <li><a href="index.html">Главная</a></li>
       <li><a href="projects.html">Проекты</a></li>
@@ -178,10 +224,10 @@
       <li><a href="contacts.html">Контакты</a></li>
     </ul>
   </div>
-  <div class="col-lg-2 col-lg-offset-1">
+  <div class="col-lg-2 col-md-3 col-sm-3 col-lg-offset-1">
     <ul class="mbr-footer__list">
-      <li>8 (821) 900-11-63</li>
-      <li class="underline">info@mbrooks.ru</li>
+      <li><a href="tel:8-921-900-11-63">8 (821) 900-11-63</a></li>
+      <li class="underline"><a href="mailto:info@mbrooks.ru">info@mbrooks.ru</a></li>
       <li> &#160; </li>
       <li>г. Санкт-Петербург,</li>
       <li>Биржевой пер. 2-4,</li>
@@ -189,7 +235,7 @@
       <li>3-й этаж (мансарда)</li>
     </ul>
   </div>
-  <div class="col-lg-2 col-lg-offset-1">
+  <div class="col-lg-2 col-md-3 col-sm-3 col-lg-offset-1">
     <ul class="mbr-footer__list mbr-footer__list--socials">
       <li><a href="">Facebook</a></li>
       <li><a href="">Вконтакте</a></li>
@@ -199,8 +245,8 @@
       <li><a href="">Linkedin</a></li>
     </ul>
   </div>
-  <div class="col-lg-2 col-lg-offset-1">
-    © Mr. Brooks 2015
+  <div class="col-lg-2 col-lg-offset-1 col-md-2 col-sm-2">
+    <a href="mbrook.ru">© Mr. Brooks 2015</a>
   </div>
 </div>
 </footer>

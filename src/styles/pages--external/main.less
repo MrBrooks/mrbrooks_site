@@ -1,13 +1,26 @@
-#test-btn{
-  position: fixed;
-  top: 100px;
-  right: 100px;
-  height: 50px;
+#down-btn{
+  position: absolute;
+  top: @menu-height*2;
+  left: 30px;
+  cursor: pointer;
+  color: @bronse;
+  font-size: 20px;
+  @media screen and (max-width: @screen-desktop){
+    top: @menu-height;
+    font-size: 16px;
+  }
+  transition: all 500ms;
+  &:hover{
+    filter: blur(3px);
+  }
 }
 #mbr-main-anim{
   height: ~"calc(100vh - 140px)";
   @media screen and (max-width: @screen-desktop){
     height: ~"calc(100vh - 70px)";
+  }
+  @media screen and (max-width: @screen-mobile){
+    display: none;
   }
 }
 #mbr-video-main{
@@ -59,7 +72,7 @@
   width: @container-width;
   img{
     margin: 0 10px;
-    animation: slide_down 1.5s linear infinite;
+    // animation: slide_down 1.5s linear infinite;
     &:nth-child(1){
       float: left;
       // animation-delay: 0.5s;
@@ -125,13 +138,23 @@
 //content styles
 .mbr-portfolio__item{
   // background-color: gray;
-  img{
+  .pic{
     width: 100%;
+    transition: all 400ms;
+    @media screen and (max-width: @screen-tablet){
+      opacity: 0.1;
+      transform: scale(1.1);
+      // filter: blur(4px);
+    }
   }
   position: relative;
-  &:hover img{
-    opacity: 0.3;
-    transition: all 400ms;
+  &:hover .pic{
+    opacity: 0.1;
+    transform: scale(1.1);
+    filter: blur(4px);
+    @media screen and (max-width: @screen-mobile){
+      filter: none;
+    }
   }
   .onhover{
     display: none;
@@ -142,31 +165,211 @@
     top: 0;
     bottom: 0;
     left: 20%;
+    @media screen and (max-width: @screen-desktop){
+      width: 70%;
+      left: 10%;
+      max-height: 70%;
+    }
+    @media screen and (max-width: @screen-tablet){
+      display: block;
+      left: 30px;
+      top: 30px;
+      margin: 0;
+    }
+    .mbr-h3{
+      margin: 0 0 10px;
+    }
     &.active{
       display: block;
     }
+    &.small{
+      width: 50%;
+      height: 50%;
+      left: 50px;
+      top: 30px;
+      bottom: initial;
+      @media screen and (max-width: @screen-desktop){
+        width: 80%;
+        height: 80%;
+        left: 25px;
+        top: 10px;
+      }
+      @media screen and (max-width: @screen-tablet){
+        font-size: 100%;
+        width: 70%;
+        left: 30px;
+        max-height: 70%;
+        position: absolute;
+        // margin: auto;
+        top: 30px;
+      }
+
+    }
   }
-}
-#mbr-clients-slider{
-  height: 600px;
-  padding: 200px 0;
-  .owl-item{
+  .article{
+    width: 100%;
     height: 100%;
-    padding: 0 100px;
-    div{
-      height: 100%;
+    border: 2px solid @bronse;
+    padding: 30px 50px;
+    .desc{
+      width: 50%;
+      @media screen and (max-width: @screen-desktop){
+        width: 66%;
+      }
+      @media screen and (max-width: @screen-tablet){
+        width: 100%;
+      }
+    }
+    .mbr-h3{
+      margin: 0 0 10px;
     }
     @media screen and (max-width: @screen-desktop){
-      padding: 0 50px;
-      height: 90px;
+      padding: 20px 30px;
+    }
+    @media screen and (max-width: @screen-tablet){
+      padding: 30px 30px;
+    }
+  }
+  .desc{
+    color: @white;
+  }
+  .arrow{
+    width: 20px;
+    height: 7px;
+    transition: all 500ms;
+    // display: none;
+    transition-delay: 250ms;
+  }
+  .more{
+    &>span{
+      // display: none;
+      opacity: 0;
+      transition: all 500ms;
+      transition-delay: 0ms;
+      position: relative;
+      left: -25px;
+    }
+    &:hover{
+      &>span{
+        // display: inline;
+        opacity: 1;
+        transition-delay: 250ms;
+        // transform: translateX(-20px);
+
+      }
+      &>.arrow{
+        // display: none;
+        opacity: 0;
+        transition-delay: 0ms;
+        transform: translateX(40px);
+      }
+    }
+  }
+}
+@slider-height-lg : 600px;
+@slider-height-md : 400px;
+
+#mbr-clients-slider{
+  height: @slider-height-lg;
+  padding: @slider-height-lg/3 0;
+  .owl-item{
+    height: @slider-height-lg/3;
+    // padding: 0 100px;
+    div{
+      height: @slider-height-lg/3;
+      @media screen and (max-width: @screen-desktop){
+        height: @slider-height-md/3;
+      }
+    }
+    @media screen and (max-width: @screen-desktop){
+      // padding: 0 50px;
+      height: @slider-height-md/3;
     }
   }
   img{
     height: 100%;
   }
   @media screen and (max-width: @screen-desktop){
-    height: 400px;
+    height: @slider-height-md;
+    padding: @slider-height-md/3 0;
   }
+}
+.mbr-clients{
+  margin: 150px 0;
+  &>div{
+    text-align: center;
+    vertical-align: middle;
+    display: -webkit-inline-flex;
+    display: -moz-inline-flex;
+    display: -ms-inline-flex;
+    display: -o-inline-flex;
+    display: inline-flex;
+    justify-content: center;
+    margin: 50px 0;
+    height: 225px;
+    @media screen and (max-width: @screen-desktop){
+      margin: 25px 0;
+      padding: 0 25px;
+    }
+  }
+  img{
+    max-width: 100%;
+    max-height: 100%;
+  }
+  @media screen and (max-width: @screen-desktop){
+    margin: 75px 0;
+  }
+}
+#mbr-main-private{
+  height: 100vh;
+  position: relative;
+  display: table;
+  width: 100%;
+  .shuffle{
+    font-family: "HelveticaLight";
+    // font-weight: 300;
+    font-size: 150px;
+    // width: 100%;
+    color: @bronse;
+    display: table;
+    justify-content: center;
+    text-transform: uppercase;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    // transition: all 1s;
+    // line-height: 150;
+    // position: absolute;
+    // margin: auto;
+    // bottom: 0;
+    // top: 0;
+    // right: 0;
+    // left: 0;
+    
+    &>div{
+      padding: 31px 40px 0px;
+      display: inline;
+      cursor: pointer;
+      @media screen and (max-width: @screen-desktop){
+        padding: 14px 37px 0px;
+      }
+      &:last-child{
+        border: 5px solid @bronse;
+        @media screen and (max-width: @screen-desktop){
+          border: 2px solid @bronse;
+        }
+      }
+    }
+    @media screen and (max-width: @screen-desktop){
+      font-size: 75px;
+    }
+    @media screen and (max-width: @screen-tablet){
+      font-size: 50px;
+    }
+  }
+}
+.inline{
+  display: inline;
 }
 
 

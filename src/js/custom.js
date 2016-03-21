@@ -38,6 +38,35 @@ $(document).ready(function() {
     selectItem: ".mbr-portfolio__item",
     addGalleryMargin: false
   });
+  function evalTrueColNumber(widths){ // [320, 768, 1024, 1600]
+    var w = window.innerWidth, n = 0;
+    while( w >= widths[n++] ){
+    }
+    return n;
+  }
+
+  if($("#column-grid").length > 0){
+    var grid, timer,  ncol = evalTrueColNumber([767, 768, 1600]);
+
+    // grid = $("#column-grid").columnGrid({n : 4, selectItem : ".mbr-blog__post"});
+    grid = $("#column-grid").columnGrid({n : ncol, selectItem : ".mbr-blog__post"});
+
+    $(window).on("resize", function(){
+      clearTimeout(timer);
+      timer = setTimeout(function(){
+        grid.reload({n : evalTrueColNumber([768, 1024, 1600])});
+      }, 1000);
+    });
+  }
+
+  $("#mobile-menu-btn").on("click touchstart",function(){
+    $(".mbr-header").toggleClass("active");
+  });
+
+
+
+
+
   function loadOptimVideo(selector){
     var vid = $(selector); 
     if(vid.length > 0){
@@ -153,21 +182,27 @@ $(document).ready(function() {
         },50);
       }
     }
-    $("#test-btn").click(videoEnd);
+    $("#down-btn").click(videoEnd);
     // function setSectionHeight(h){
     //   $("#mbr-main-anim").height(h);
     // }
     function init(){
-      afterLoadingVideo(function(){
-        // setSectionHeight(vid.duration*speed);
-        $("body").css("overflow","hidden");
-        extendKeypoints();
-        wheelEventControl();
-        scrollEventControl();
-      });
+      if( $(window).width() > 768){
+        afterLoadingVideo(function(){
+          // setSectionHeight(vid.duration*speed);
+          $("body").css("overflow","hidden");
+          extendKeypoints();
+          wheelEventControl();
+          scrollEventControl();
+        });
+      }
     }
     function scrollEventControl(){
       var timer;
+      if($("body").scrollTop() > 5){
+        $("body").css("overflow","auto");
+        $("#mbr-video-main").hide();
+      }
       $(window).bind("scroll",function(){
         clearTimeout(timer);
         timer = setTimeout(function(){
@@ -224,26 +259,33 @@ $(document).ready(function() {
     videoScrolling([5,10,20],200);
   }
   function createProjectTimeline(){
+
     var sections = $("section[data-section-name]");
     if( sections.length > 0){
       var section_names = [],
           scroll_top_arr = [],
+          footer_top,
           timeline_list = $("#mbr-project__timeline>ul"),
           current_scroll = 0,
           current_section,
           resizeTimer,
           scrollTimer,
-          flagAllowUpdate = true;
+          flagAllowUpdate = true,
+          direction = 0,
+          afterScrollreinit = true;
+
       sections.each(function(index, el){
         section_names.push($(this).attr("data-section-name"));
         scroll_top_arr.push($(this).offset().top);
       });
+      footer_top = $("footer").offset().top;
       
       function reinitSectionArray(){
         scroll_top_arr = [];
         sections.each(function(index, el){
           scroll_top_arr.push($(this).offset().top);
         });
+        footer_top = $("footer").offset().top;
       }
 
       function whatSection(){
@@ -274,6 +316,11 @@ $(document).ready(function() {
           updateView();
         });
       }
+      function sectionKeeper(){
+        if( direction > 0 && (current_scroll > scroll_top_arr[current_section+1] - 400)){
+          goNextSection();
+        }
+      }
 
       function goPrevSection(){
         goToSection(current_section - 1);
@@ -285,7 +332,7 @@ $(document).ready(function() {
 
       function updateView(){
         if(flagAllowUpdate){
-          if (current_section === -1){
+          if ((current_section === -1) || (current_scroll + $(window).height() > footer_top )){
             $("#mbr-project__timeline").fadeOut();
           }
           else{
@@ -323,10 +370,13 @@ $(document).ready(function() {
         
         clearTimeout(scrollTimer);
         scrollTimer = setTimeout(function(){
+          if(afterScrollreinit){reinitSectionArray();}
+          direction = $("body").scrollTop() - current_scroll;
           current_scroll = $("body").scrollTop();
           current_section = whatSection();
           // console.log(current_scroll);
           // console.log(current_section);
+          sectionKeeper();
           updateView();
         },50);
       });
@@ -365,7 +415,8 @@ $(document).ready(function() {
         iterations: 20,
         lang: "ru",
         mode: "seq", // seq or rand
-        fixedWidth: false
+        fixedWidth: true,
+        gameShuffle : false
       },opt);
     function randomString(len){
       len = typeof(len) != 'undefined'? len : def_opt.length;
@@ -404,43 +455,95 @@ $(document).ready(function() {
       //     },opt.duration);
       //   });
       // });
-      $(def_opt.selector).on(def_opt.events,function(){
-        if(flag){
-          flag = false;
-          var elem = $(this),
-              content = $(this).html();
-          if(def_opt.fixedWidth){
-            var width = $(this).parent().width();
-            // $(this).parent().css("min-width",width+"px");
-            $(this).parent().width(width);
-          }
-
-          if (def_opt.length != content.length){
-            def_opt.length = content.length;
-            // console.log("Warning! Lengths don't match");
-          }
-          var iterator = 0;
-          for(var i = 0; i < def_opt.iterations;i++){
-            setTimeout(function(){
-              if(def_opt.mode == "rand"){
-                elem.html(randomString());
-              } else if (def_opt.mode == "seq"){
-                elem.html(seqRandomString(content,Math.floor((iterator++)*content.length/def_opt.iterations))); // доделать
-              } else{
-                console.log("suffleLetters error! Unknown mode!");
+      if(opt.gameShuffle){
+        var elements = $(def_opt.selector), words = [],width, content = [];
+        elements.each(function(index, el){
+          // width = $(this).width();
+          // $(this).width(width);
+          words.push($(this).html().split(""));
+          content.push($(this).html());
+        });
+        elements.each(function(index){
+          var nothoverFlag = true;
+          var rand = randomString(words[index].length);
+          
+          if( $(window).width() > 1024){
+            $(this).html("");
+            for(var i = 0; i < words[index].length; i++){
+              $(this).append("<div class='inline' data-index='"+i+"'>"+rand[i]+"</div>");
+            }
+            $(this).children().one("mouseenter",function(){
+              // if( nothoverFlag ){
+              var iterator = 0, ind = parseInt($(this).attr("data-index")), self = $(this);
+              // nothoverFlag = false;
+              for(var i = 0; i < def_opt.iterations;i++){
+                setTimeout(function(){
+                  self.html(randomString(1));
+                },i*pause);
               }
-            },i*pause);
+              setTimeout(function(){
+                self.html(words[index][ind]);
+              },i*pause);
+              // }
+            });
+          } else {
+            $(this).html(rand);
+            $(this).one("touchstart",function(){
+              var iterator = 0, self = $(this);
+
+              for(var i = 0; i < def_opt.iterations;i++){
+                setTimeout(function(){
+                  self.html(randomString(words[index].length));
+                },i*pause);
+              }
+              setTimeout(function(){
+                self.html(content[index]);
+              },i*pause);
+            });
           }
-          setTimeout(function(){
-            elem.html(content);
-            flag = true;
-          },def_opt.duration);
-        }
-      });
+        });
+        console.log(words);
+      } else{
+        $(def_opt.selector).on(def_opt.events,function(){
+          if(flag){
+            flag = false;
+            var elem = $(this),
+                content = $(this).html();
+            if(def_opt.fixedWidth){
+              var width = $(this).parent().width(),  height = $(this).parent().height();
+              // $(this).parent().css("min-width",width+"px");
+              $(this).parent().width(width).height(height);
+            }
+
+            if (def_opt.length != content.length){
+              def_opt.length = content.length;
+              // console.log("Warning! Lengths don't match");
+            }
+            var iterator = 0;
+            for(var i = 0; i < def_opt.iterations;i++){
+              setTimeout(function(){
+                if(def_opt.mode == "rand"){
+                  elem.html(randomString());
+                } else if (def_opt.mode == "seq"){
+                  elem.html(seqRandomString(content,Math.floor((iterator++)*content.length/def_opt.iterations)));
+                } else {
+                  console.log("suffleLetters error! Unknown mode!");
+                }
+              },i*pause);
+            }
+            setTimeout(function(){
+              elem.html(content);
+              flag = true;
+            },def_opt.duration);
+          }
+        });
+      }
     }
     Generator();
   }
-  suffleLetters();
+  // suffleLetters();
+  suffleLetters({selector: ".mbr-btn, .shuffleOnHover"});
+  suffleLetters({selector: ".shuffle>div", gameShuffle : true, lang: "en"});
   // ПОМЕНЯТЬ ПОТОМ!!!
   // $(".mbr-portfolio__item").wrap("<a href='project.html'>");
   $(".mbr-portfolio__item").addClass("withripple").attr("data-ripple-color", "#e1bb9a").ripples();
@@ -450,10 +553,11 @@ $(document).ready(function() {
     $(this).find(".onhover").removeClass("active");
   });
 
-  var map = $("#mbr-map");
-  map.height(map.width());
+  var jmap = $("#mbr-map");
+  jmap.height(jmap.width());
+});
   //GOOLGE MAP INITIALIZATION
-  if($("#mbr-map").length > 0){
+  // if(jmap.length > 0){
     var map;
     function initMap() {
       var customMapType = new google.maps.StyledMapType([
@@ -508,6 +612,6 @@ $(document).ready(function() {
           zIndex: 1
         });
     }
-  }
-});
+  // }
+// });
 

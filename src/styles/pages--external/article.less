@@ -22,11 +22,13 @@
 .mbr-article__controls{
   width: ~"calc(100% / 7 * 4 )";
   margin: auto;
+  margin-top: 20px;
   img{
-    margin-top: -50px;
+    margin-top: -48px;
   }
   span{
     display: inline-block;
+    line-height: 22px;
   }
   a{
     color: @dark;
@@ -39,11 +41,27 @@
     &:last-child{
       float: right;
     }
-
+  }
+  @media screen and (max-width: @screen-desktop){
+    width: 100%;
+  }
+}
+.mbr-resent-posts{
+  border-left: 2px solid black;
+  padding-left: 10px;
+  @media screen and (max-width: @screen-desktop){
+    border: 0;
+    padding-left: 0;
+    border-right: 2px solid black;
+    padding-right: 10px;
   }
 }
 .mbr-article__content{
   color: @dark;
   width: ~"calc(100% / 7 * 4 )";
   margin: auto;
+  margin-bottom: 50px;
+  @media screen and (max-width: @screen-desktop){
+    width: 70%;
+  }
 }

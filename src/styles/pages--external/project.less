@@ -2,9 +2,47 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  padding: 134px 0 245px;
   ul{
     list-style: none;
     padding: 0;
+  }
+  h1{
+    margin-bottom: 47px;
+  }
+  h2{
+    font-family: "Helvetica";
+    font-size: 36px;
+    text-transform: uppercase;
+    margin-bottom: 80px;
+    @media screen and (max-width: @screen-desktop){
+      font-size: 24px;
+      margin-bottom: 47px;
+    }
+  }
+  h3{
+    font-family: "ClearSansReg";
+    font-size: 24px;
+    @media screen and (max-width: @screen-desktop){
+      font-size: 16px;
+    }
+  }
+  .content{
+    margin-bottom: 64px;
+    font-size: 22px;
+    @media screen and (max-width: @screen-desktop){
+      font-size: 16px;
+    }
+  }
+  img{
+    width: 100%;
+  }
+  label{
+    max-width: 490px;
+    margin-top: 30px;
+  }
+  @media screen and (max-width: @screen-desktop){
+    padding: 80px 0 94px;
   }
 }
 .mbr-project__start-banner{
@@ -12,11 +50,17 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
   width: 100%;
-  min-height: 945px;
+  // min-height: 945px;
+  height: ~"calc(100vh - 140px)";
+  // margin-left: -@grid-padding;
   &>div{
-    padding-top: 450px;
+    padding-top: 400px;
     // max-width: 450px;
+  }
+  @media screen and (max-width: @screen-desktop){
+    height: ~"calc(100vh - 70px)";
   }
 }
 .mbr-project__steps{
@@ -28,27 +72,48 @@
   }
   li{
     cursor: pointer;
-    margin-bottom: 20px;
-  }
-}
-.mbr-project__slider, .mbr-project__image, .mbr-project__images{
-  padding: 134px 0 245px;
-  h1{
-    margin-bottom: 47px;
+    margin-bottom: 10px;
   }
   h2{
-    margin-bottom: 80px;
+    margin-bottom: 50px;
   }
-  .content{
-    margin-bottom: 64px;
-  }
-  img{
-    width: 100%;
-  }
-  label{
-    max-width: 490px;
-    margin-top: 30px;
-  }
+
+}
+// .mbr-project__slider, .mbr-project__image, .mbr-project__images{  
+// }
+@-webkit-keyframes move-right {
+  from {  }
+  to {  }
+}
+@-o-keyframes move-right {
+  from {  }
+  to {  }
+}
+@-moz-keyframes move-right {
+  from {  }
+  to {  }
+}
+@keyframes move-right {
+  0% { background-position: 50% 50%; }
+  50% { background-position: 70% 50%; }
+  100% { background-position: 50% 50%; }
+}
+@-webkit-keyframes move-left {
+  from {  }
+  to {  }
+}
+@-o-keyframes move-left {
+  from {  }
+  to {  }
+}
+@-moz-keyframes move-left {
+  from {  }
+  to {  }
+}
+@keyframes move-left {
+  0% { background-position: 50% 50%; }
+  50% { background-position: 30% 50%; }
+  100% { background-position: 50% 50%; }
 }
 .mbr-project-slider{
   .owl-nav>div{
@@ -57,17 +122,42 @@
     width: 240px;
     top: 0;
     left: -240px;
-    background-position: center;
+    background-position: 50% 50%;
     background-size: 37px;
     background-repeat: no-repeat;
     background-image: url(../img/svg/arrow-left-bronse.svg);
+    cursor: pointer;
+    // transition: all 1s;
+    &:hover{
+      animation: move-left 2s infinite;
+      // background-position: 30% 50%;
+    }
     &:last-child{
       left: initial;
       right: -240px;
       transform: rotate(180deg);
       transform-origin: 50% 50%;
+      @media screen and (max-width: @screen-desktop){
+        width: 100px;
+        right: -100px;
+      }
+    }
+    @media screen and (max-width: @screen-desktop){
+      width: 100px;
+      left: -100px;
+      background-size: 23px;
     }
   }
+  // .owl-next{
+  //   &:hover{
+  //     animation: move-left 2s infinite;
+  //   }
+  // }
+  // .owl-prev{
+  //   &:hover{
+  //     animation: move-left 2s infinite;
+  //   }
+  // }
 }
 .mbr-project__light{
   background-color: @light-grey;
@@ -126,12 +216,18 @@
       color: @bronse;
       border-color: @bronse-neutral;
       font-size: 20px;
+      @media screen and (max-width: @screen-desktop){
+        font-size: 16px;
+
+      }
     }
     &:hover{
       color: @bronse;
     }
-    @media screen and (max-width: 1024px){
-      margin-bottom: 70px;
+    @media screen and (max-width: @screen-desktop){
+      margin-bottom: 30px;
+      font-size: 14px;
+      // max-width: 120px;
     }
   }
   .controls{
@@ -146,7 +242,8 @@
     top: 0;
   }
   .controls .next{
-    bottom: 20px;
+    bottom: -12px;
+
     left: -3px;
   }
   @media screen and (max-width: 1024px){
