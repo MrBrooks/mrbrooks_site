@@ -343,6 +343,9 @@ footer{
     left: 0;
     overflow: hidden;
     z-index: -100;
+    @media screen and (max-width: @screen-mobile){
+      display: none;
+    }
 }
 .fullscreen-bg__video {
     position: absolute;

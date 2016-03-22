@@ -1,11 +1,30 @@
 .mbr-question{
   h1{
+    text-transform: uppercase;
     @media screen and (max-width: @screen-tablet){
       font-size: 50px;
+      
     }
     @media screen and (max-width: @screen-mobile){
       font-size: 30px;
-      margin-top: 100px;
+      margin-top: 50px;
+      text-align: left;
+    }
+  }
+}
+.mbr-question--content{
+  font-size: 20px;
+  @media screen and (max-width: @screen-desktop){
+    font-size: 16px;
+  }
+  p{
+    margin-bottom: 20px;
+  }
+  a{
+    color: @bronse;
+    text-decoration: underline;
+    &:hover{
+      color: @white;
     }
   }
 }
