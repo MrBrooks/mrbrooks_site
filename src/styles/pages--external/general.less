@@ -21,6 +21,13 @@
        url('fonts/ClearSans-Regular.ttf')  format('truetype');
 }
 @font-face {
+  font-family: 'ClearSansLight';
+  src: url('fonts/ClearSans-Light.eot'); /* IE9 Compat Modes */
+  src: url('fonts/ClearSans-Light.eot?#iefix') format('embedded-opentype'), 
+       url('fonts/ClearSans-Light.woff') format('woff'), 
+       url('fonts/ClearSans-Light.ttf')  format('truetype'); 
+}
+@font-face {
   font-family: 'ClearSansBold';
   // src: url('fonts/HelveticaBold.eot'); /* IE9 Compat Modes */
   src: url('fonts/ClearSans-Bold.woff') format('woff'), 
@@ -33,7 +40,7 @@
 body{
   background-color: @dark;
   color: @white;
-  font-family: 'ClearSansReg';
+  font-family: 'ClearSansLight';
   font-size: 16px;
   font-weight: 400;
   overflow-x: hidden;
@@ -45,6 +52,15 @@ body{
     line-height: 22px;
   }
 }
+footer{
+  margin-top: 100px;
+  @media screen and (max-width: @screen-desktop){
+    margin-top: 75px;
+  }
+  @media screen and (max-width: @screen-tablet){
+    margin-top: 50px;
+  }
+}
 a{
   color: @white;
   &:hover{
@@ -54,7 +70,7 @@ a{
 }
 h1,h2,h3,h4,h5,h6{
   color: @bronse;
-  font-family: 'ClearSansReg';
+  font-family: 'ClearSansLight';
 }
 h1{
   font-size: 36px;
@@ -87,7 +103,7 @@ footer{
   
 }
 .mbr-h3{
-  font-family: 'ClearSansReg';
+  font-family: 'ClearSansLight';
   font-size: 36px;
   font-weight: 400;
   margin-bottom: 20px;
@@ -244,6 +260,7 @@ footer{
     border-color: @dark;
     color: @dark;
     margin: 20px 0;
+    opacity: 0;
     @media screen and (max-width: @screen-desktop){
       // display: none;
       opacity: 0;
@@ -287,7 +304,7 @@ footer{
   }
 }
 .mbr-form{
-  margin-bottom: 40px;
+  // margin-bottom: 40px;
   .form-control{
     // min-height: 60px;
     height: 60px;
@@ -308,14 +325,14 @@ footer{
     }
   }
   textarea.form-control{
-    height: 350px;
+    height: 200px;
     @media screen and (max-width: @screen-desktop){
       height: 150px;
     }
   }
 }
 .mbr-btn{
-  font-family: 'ClearSansBold';
+  font-family: 'ClearSansReg';
   background-color: transparent;
   border: 2px solid @bronse;
   border-radius: 0;

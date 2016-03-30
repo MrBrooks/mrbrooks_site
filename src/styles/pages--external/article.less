@@ -24,11 +24,11 @@
   margin: auto;
   margin-top: 20px;
   img{
-    margin-top: -48px;
+    margin-top: -32px;
   }
   span{
     display: inline-block;
-    line-height: 22px;
+    line-height: 15px;
   }
   a{
     color: @dark;
@@ -47,13 +47,19 @@
   }
 }
 .mbr-resent-posts{
-  border-left: 2px solid black;
+  // border-left: 2px solid black;
   padding-left: 10px;
+  .mbr-blog__post{
+    padding-top: 0;
+  }
   @media screen and (max-width: @screen-desktop){
     border: 0;
     padding-left: 0;
-    border-right: 2px solid black;
+    // border-right: 2px solid black;
     padding-right: 10px;
+  }
+  @media screen and (max-width: @screen-tablet){
+    display: none;
   }
 }
 .mbr-article__content{
@@ -62,6 +68,6 @@
   margin: auto;
   margin-bottom: 50px;
   @media screen and (max-width: @screen-desktop){
-    width: 70%;
+    width: 100%;
   }
 }

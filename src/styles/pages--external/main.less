@@ -11,7 +11,8 @@
   }
   transition: all 500ms;
   &:hover{
-    filter: blur(3px);
+    // filter: blur(3px);
+    text-decoration: underline;
   }
 }
 #mbr-main-anim{
@@ -73,14 +74,14 @@
   img{
     margin: 0 10px;
     // animation: slide_down 1.5s linear infinite;
-    &:nth-child(1){
-      float: left;
-      // animation-delay: 0.5s;
-    }
-    &:nth-child(3){
-      float: right;
-      // animation-delay: 1s;
-    }
+    // &:nth-child(1){
+    //   float: left;
+    //   // animation-delay: 0.5s;
+    // }
+    // &:nth-child(3){
+    //   float: right;
+    //   // animation-delay: 1s;
+    // }
   }
 }
 // .mbr-portfolio__first-block{
@@ -313,7 +314,7 @@
     }
   }
   img{
-    max-width: 100%;
+    max-width: 50%;
     max-height: 100%;
   }
   @media screen and (max-width: @screen-desktop){

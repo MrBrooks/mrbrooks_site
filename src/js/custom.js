@@ -145,6 +145,7 @@ $(document).ready(function() {
     }
     function videoEnd(){
       currPoint = keypoints.length - 1;
+      vid.pause();
       $("body").css("overflow", "auto");
       jvid.fadeOut(100);
       $('html, body').animate({
@@ -554,7 +555,7 @@ $(document).ready(function() {
   });
 
   var jmap = $("#mbr-map");
-  jmap.height(jmap.width());
+  jmap.height($(".mbr-contacts__form").height());
 });
   //GOOLGE MAP INITIALIZATION
   // if(jmap.length > 0){
