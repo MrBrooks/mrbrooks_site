@@ -1,15 +1,19 @@
 
 <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 mbr-projects__filter">
-  <ul>
-    <li><a href="">Нейминг</a></li>
-    <li><a href="">Фирменный стиль</a></li>
-    <li><a href="">Печатные издания</a></li>
-    <li><a href="">Упаковка</a></li>
-    <li><a href="">Видео/Анимация</a></li>
-    <li><a href="">Сайты</a></li>
-    <li><a href="">Фотография</a></li>
-    <li><a href="">Графика</a></li>
-  </ul>
+  <button id="mbr-filter" class="btn btn-default mbr-btn noshuffle">Фильтр</button>
+  <div id="mbr-filter-list">
+    <ul>
+      <li data-category="naming">Нейминг</li>
+      <li data-category="firmstyle">Фирменный стиль</li>
+      <li data-category="print">Печатные издания</li>
+      <li data-category="pack">Упаковка</li>
+      <li data-category="video">Видео/Анимация</li>
+      <li data-category="sites">Сайты</li>
+      <li data-category="photo">Фотография</li>
+      <li data-category="graph">Графика</li>
+    </ul>
+    <button id="mbr-filter-accept" class="btn btn-default mbr-btn noshuffle">Применить</button>
+  </div>
 </div>
 <div class="mbr-portfolio">
     <div class="mbr-portfolio__first-block">
@@ -96,4 +100,7 @@
         <img class="pic" src="http://placehold.it/1250x615/fff/111">
       </div>
     </div>
+  </div>
+  <div class="centered">
+    <button id="mbr-load-more" class="btn btn-default mbr-btn noshuffle">Загрузить еще</button>
   </div>

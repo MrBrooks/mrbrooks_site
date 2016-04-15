@@ -5,9 +5,42 @@
     columns: 2;
     list-style: none;
     padding: 0;
+    text-align: left;
+    @media screen and (max-width: @screen-mobile){
+      columns: initial;
+      padding-left: 20px;
+      font-size: 18px;
+      margin: 30px 0;
+    }
   }
   li{
     margin-bottom: 10px;
+    cursor: pointer;
+    &:hover{
+      color: @bronse;
+    }
+    &.active{
+      color: @bronse;
+    }
+  }
+  @media screen and (max-width: @screen-mobile){
+    text-align: center;
+  }
+}
+#mbr-filter, #mbr-filter-accept{
+  margin: auto;
+  display: none;
+  @media screen and (max-width: @screen-mobile){
+    display: block;
+  }
+  // color: @bronse;
+}
+#mbr-load-more{
+  margin: auto;
+}
+#mbr-filter-list{
+  @media screen and (max-width: @screen-mobile){
+    display: none;
   }
 }
 

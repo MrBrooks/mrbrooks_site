@@ -9,6 +9,15 @@
   img{
     width: 100%;
     margin-top: 20px;
+    @media screen and (max-width: @screen-mobile){
+      margin: 0;
+    }
+  }
+  p{
+    @media screen and (max-width: @screen-mobile){
+      font-size: 13px;
+      font-family: "ClearSansBold";
+    }
   }
   span{
     margin: 30px 0;
@@ -27,8 +36,37 @@
     @media screen and (max-width: @screen-desktop){
      font-size: 24px;
     }
+    @media screen and (max-width: @screen-mobile){
+     margin-bottom: 0;
+    }
   }
-  
+  .space{
+    @media screen and (max-width: @screen-mobile){
+      display: none;
+    }
+  }
+  .content p{
+    padding-top: 7px;
+    @media screen and (max-width: @screen-desktop){
+      padding-top: 5px;
+    }
+  }
+  .col-xs-12.content{
+    @media screen and (max-width: @screen-mobile){
+      width: 100%;
+      padding: 10px;
+    }
+  }
+  .col-xs-12{
+    @media screen and (max-width: @screen-mobile){
+      padding: 0;
+      width: 100vw;
+      margin-left: -10px;
+    }
+  }
+  @media screen and (max-width: @screen-mobile){
+    margin-bottom: 20px;
+  }
 }
 .mbr-blog__post{
   color: @dark;
@@ -46,6 +84,15 @@
     }
     @media screen and (max-width: @screen-tablet){
      font-size: 20px;
+    }
+    @media screen and (max-width: @screen-mobile){
+      margin-bottom: 20px;
+    }
+  }
+  p{
+    @media screen and (max-width: @screen-mobile){
+      font-size: 13px;
+      font-family: "ClearSansBold";
     }
   }
   img{

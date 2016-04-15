@@ -1,3 +1,10 @@
+.mbr-article__banner{
+  @media screen and (max-width: @screen-mobile){
+    padding: 0;
+    margin-left: -10px;
+    width: 100vw;
+  }
+}
 .mbr-banner{
   display: inline-table;
   width: 100%;
@@ -6,6 +13,9 @@
   background-position: center;
   background-size: cover;
   text-align: center;
+  @media screen and (max-width: @screen-mobile){
+    min-height: 400px;
+  }
   h1{
     display: table-cell;
     vertical-align: middle;
@@ -17,6 +27,9 @@
     top: 660px;
     width: 100%;
     color: @bronse;
+    @media screen and (max-width: @screen-mobile){
+      top: 350px;
+    }
   }
 }
 .mbr-article__controls{
@@ -44,6 +57,23 @@
   }
   @media screen and (max-width: @screen-desktop){
     width: 100%;
+  }
+  @media screen and (max-width: @screen-mobile){
+    position: absolute;
+    top: 350px;
+    margin: 0;
+    span{
+      display: none;
+    }
+    div{
+      width: 100px;
+      height: 50px;
+      text-align: center;
+      vertical-align: middle;
+    }
+    img{
+      margin: 0;
+    }
   }
 }
 .mbr-resent-posts{

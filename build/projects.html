@@ -87,7 +87,7 @@
         <li><a class="shuffleOnHover" href="projects.html">Проекты</a></li>
         <li><a class="shuffleOnHover" href="blog.html">Блог</a></li>
         <li><a class="shuffleOnHover" href="contacts.html">Контакты</a></li>
-        <li><a class="shuffleOnHover" href="">EN</a></li>
+        <li class="hidden"><a class="shuffleOnHover" href="">EN</a></li>
         <li id="mobile-menu-btn"><div>
           <div class="bar"></div>
           <div class="bar"></div>
@@ -104,16 +104,20 @@
 
           
 <div class="col-lg-4 col-lg-offset-4 col-md-4 col-md-offset-4 mbr-projects__filter">
-  <ul>
-    <li><a href="">Нейминг</a></li>
-    <li><a href="">Фирменный стиль</a></li>
-    <li><a href="">Печатные издания</a></li>
-    <li><a href="">Упаковка</a></li>
-    <li><a href="">Видео/Анимация</a></li>
-    <li><a href="">Сайты</a></li>
-    <li><a href="">Фотография</a></li>
-    <li><a href="">Графика</a></li>
-  </ul>
+  <button id="mbr-filter" class="btn btn-default mbr-btn noshuffle">Фильтр</button>
+  <div id="mbr-filter-list">
+    <ul>
+      <li data-category="naming">Нейминг</li>
+      <li data-category="firmstyle">Фирменный стиль</li>
+      <li data-category="print">Печатные издания</li>
+      <li data-category="pack">Упаковка</li>
+      <li data-category="video">Видео/Анимация</li>
+      <li data-category="sites">Сайты</li>
+      <li data-category="photo">Фотография</li>
+      <li data-category="graph">Графика</li>
+    </ul>
+    <button id="mbr-filter-accept" class="btn btn-default mbr-btn noshuffle">Применить</button>
+  </div>
 </div>
 <div class="mbr-portfolio">
     <div class="mbr-portfolio__first-block">
@@ -201,6 +205,9 @@
       </div>
     </div>
   </div>
+  <div class="centered">
+    <button id="mbr-load-more" class="btn btn-default mbr-btn noshuffle">Загрузить еще</button>
+  </div>
         </main>
 
         <footer>
@@ -212,7 +219,7 @@
 </div>
 <div class="row mbr-footer__links">
   <div class="col-lg-2 col-md-2 col-sm-2 col-lg-offset-1 col-sm-offset-1">
-    <ul class="mbr-footer__list">
+    <ul class="mbr-footer__list mobile-hide">
       <li><a href="index.html">Главная</a></li>
       <li><a href="projects.html">Проекты</a></li>
       <li><a href="blog.html">Блог</a></li>
@@ -220,7 +227,7 @@
     </ul>
   </div>
   <div class="col-lg-2 col-md-3 col-sm-3 col-lg-offset-1">
-    <ul class="mbr-footer__list">
+    <ul class="mbr-footer__list mbr-footer__contacts">
       <li><a href="tel:8-921-900-11-63">8 (821) 900-11-63</a></li>
       <li class="underline"><a href="mailto:info@mbrooks.ru">info@mbrooks.ru</a></li>
       <li> &#160; </li>
@@ -240,8 +247,8 @@
       <li><a href="">Linkedin</a></li>
     </ul>
   </div>
-  <div class="col-lg-2 col-lg-offset-1 col-md-2 col-sm-2">
-    <a href="mbrook.ru">© Mr. Brooks 2015</a>
+  <div class="col-lg-2 col-lg-offset-1 col-md-2 col-sm-2 mbr-copyright">
+    <a href="http://mbrooks.ru">© Mr. Brooks 2015</a>
   </div>
 </div>
 </footer>

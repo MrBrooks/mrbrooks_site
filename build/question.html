@@ -94,9 +94,12 @@
       </video>
     </div>
     <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-1">
-      <h1>Если Вы так далеко зашли, возможно, стоит продолжить</h1>
-      <!-- <p class="mbr-soon__date">НОВЫЙ САЙТ 15 АПРЕЛЯ</p> -->
-      <a href=""><button class="mbr-btn">Продолжить</button></a>
+      <h1>Маркетинг не может работать лучше?</h1>
+      <form id="toanswer" action="/answer/submit.php">
+        <input required type="text" name="name" placeholder="Имя"> 
+        <input required type="email" name="email" placeholder="Email">
+      </form>
+      <button type="submit" form="toanswer" class="mbr-btn">Найти ответ</button>
     </div>
   </div>
 </main>
