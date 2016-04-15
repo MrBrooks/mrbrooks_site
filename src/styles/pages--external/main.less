@@ -367,12 +367,13 @@
   }
 }
 #mbr-main-private{
-  height: ~"calc(100vh - @{menu-height}*2)";
+  // height: ~"calc(100vh - @{menu-height}*2)";
+  height: 100vh;
   position: relative;
   display: table;
   width: 100%;
-  @media screen and (max-width: @screen-desktop){
-    height: ~"calc(100vh - @{menu-height})";
+  @media screen and (max-width: @screen-mobile){
+    height: ~"calc(100vh - 50px)";
   }
   .shuffle{
     font-family: "HelveticaLight";
