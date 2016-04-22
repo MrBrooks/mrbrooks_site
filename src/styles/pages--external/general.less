@@ -102,7 +102,7 @@ footer{
 }
 .mobile-hide{
   @media screen and (max-width: @screen-mobile){
-    display: none;
+    display: none!important;
   }
 }
 .centered{
@@ -424,6 +424,22 @@ footer{
        -moz-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
       transform: translate(-50%, -50%);
+}
+.placehold-image{
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(http://placehold.it/1680x900);
+  img{
+    opacity: 0;
+    width: 100%;
+  }
+  &--square{
+    background-image: url(http://placehold.it/850);
+  }
+  &--2520-980{
+   background-image: url(http://placehold.it/2520x980); 
+  }
 }
 
 // CSS STYLES CLASSES

@@ -150,7 +150,20 @@
   // 100% { background-position: 50% 50%; }
 }
 .mbr-project__slider{
-  
+  .item{
+    width: 100%;
+    background-image: url(../img/images/1680x900.png);
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @media screen and (max-width: @screen-mobile){
+      height: 100vw;
+    }
+  }
+  img{
+    width: 100%;
+    opacity: 0;
+  }
 }
 .mbr-project-slider{
   .owl-nav>div{
@@ -209,6 +222,13 @@
   //     animation: move-left 2s infinite;
   //   }
   // }
+}
+.mbr-project__single-img{
+  .placehold-image{
+    @media screen and (max-width: @screen-mobile){
+      height: 100vw;
+    }
+  }
 }
 .mbr-project__light{
   background-color: @light-grey;

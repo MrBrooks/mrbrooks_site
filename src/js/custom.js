@@ -38,14 +38,14 @@ $(document).ready(function() {
     selectItem: ".mbr-portfolio__item",
     addGalleryMargin: false,
     callback: function(){
-      console.log("in callback");
-      console.log(this);
+      // console.log("in callback");
+      // console.log(this);
       // console.log(self);
-      if($(window).width() < this.mobileStarts)
-      $(".mbr-portfolio").find(this.selectItem).css({
-        "width" : "",
-        "height": ""
-      });
+      // if($(window).width() < this.mobileStarts)
+      // $(".mbr-portfolio").find(this.selectItem).css({
+      //   "width" : "",
+      //   "height": ""
+      // });
     }
   });
 
