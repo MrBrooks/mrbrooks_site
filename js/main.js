@@ -16116,6 +16116,10 @@ $(document).ready(function() {
     }
   });
 
+  if(window.innerWidth < 768){
+    $("#mbr-main-private").height(window.innerHeight);
+  }
+
   function portfolioFilter(){
     var filterList = $("#mbr-filter-list");
     $("#mbr-filter,#mbr-filter-accept").on("click", function(){
@@ -16147,7 +16151,7 @@ $(document).ready(function() {
     });
   }
   var onActionFlag = true;
-  $("#mobile-menu-btn").on("click touchstart",function(){
+  $("#mobile-menu-btn").on("click",function(){
     if (onActionFlag){
       onActionFlag = false;
       $(".mbr-header").toggleClass("active");

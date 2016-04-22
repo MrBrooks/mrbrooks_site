@@ -3941,6 +3941,13 @@ footer .col-md-2
 {
     margin: 0 10px;
 }
+@media screen and (max-width: 767px)
+{
+    .mbr-find-answer
+    {
+        bottom: 55px;
+    }
+}
 .mbr-portfolio__item
 {
     position: relative;
@@ -4320,7 +4327,7 @@ footer .col-md-2
 {
     #mbr-main-private
     {
-        height: calc(100vh - 50px);
+        height: 100vh;
     }
 }
 #mbr-main-private .shuffle
@@ -5037,6 +5044,8 @@ footer .col-md-2
     .mbr-project__start-banner
     {
         height: 100vw;
+
+        background-attachment: scroll;
     }
 }
 .mbr-project__steps
