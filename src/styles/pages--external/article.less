@@ -21,6 +21,9 @@
     vertical-align: middle;
     padding: 0 30%;
     color: @white;
+    @media screen and (max-width: @screen-mobile){
+      padding: 0;
+    }
   }
   span{
     position: absolute;
@@ -43,17 +46,17 @@
     display: inline-block;
     line-height: 15px;
   }
+  .link-next{
+    img{
+      transform-origin: 50% 50%;
+      transform: rotate(180deg);
+    }
+    float: right;
+  }
   a{
     color: @dark;
     display: inline-block;
     text-decoration: none;
-    &:last-child img{
-      transform-origin: 50% 50%;
-      transform: rotate(180deg);
-    }
-    &:last-child{
-      float: right;
-    }
   }
   @media screen and (max-width: @screen-desktop){
     width: 100%;
@@ -98,6 +101,13 @@
   margin: auto;
   margin-bottom: 50px;
   @media screen and (max-width: @screen-desktop){
+    width: 100%;
+  }
+  a{
+    color: @dark;
+    text-decoration: underline;
+  }
+  img,video,iframe{
     width: 100%;
   }
 }

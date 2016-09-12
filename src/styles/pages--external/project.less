@@ -1,4 +1,5 @@
 .mbr-project{
+  position: relative;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -59,6 +60,26 @@
     padding: 0px 10px;
     padding-top: 20px;
   }
+  .row{
+    position: relative;
+    z-index: 1000;
+  }
+  &.nopadding{
+    padding-bottom: 0;
+  }
+}
+.mbr-slide-backgrounds{
+  position: absolute;
+  z-index: 900;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  img{
+    width: initial;
+  }
+  .background{
+    position: absolute;
+  }
 }
 .mbr-project__start-banner{
   background-image: url("@{img_path}/test/banner.jpg");
@@ -71,7 +92,7 @@
   height: ~"calc(100vh - 140px)";
   // margin-left: -@grid-padding;
   &>div{
-    padding-top: 400px;
+    padding-top: 300px;
     // max-width: 450px;
     @media screen and (max-width: @screen-mobile){
       padding: 0 40px;
@@ -80,6 +101,10 @@
   }
   @media screen and (max-width: @screen-desktop){
     height: ~"calc(100vh - 70px)";
+  }
+  @media screen and (max-width: @screen-tablet){
+    height: 100vw;
+    background-attachment: scroll;
   }
   @media screen and (max-width: @screen-mobile){
     height: 100vw;
@@ -111,10 +136,7 @@
       margin-top: 40px;
     }
   }
-
 }
-// .mbr-project__slider, .mbr-project__image, .mbr-project__images{  
-// }
 @-webkit-keyframes move-right {
   from {  }
   to {  }
@@ -149,7 +171,7 @@
   100% { background-position: 50% 50%; }
   // 100% { background-position: 50% 50%; }
 }
-.mbr-project__slider{
+.mbr-project-slider{
   .item{
     width: 100%;
     background-image: url(../img/images/1680x900.png);
@@ -277,6 +299,7 @@
   left: 40px;
   color: @grey-neutral;
   z-index: 1000;
+  max-width: 250px;
   ul{
     list-style: none;
     padding: 0;

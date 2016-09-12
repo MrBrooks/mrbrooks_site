@@ -37,6 +37,11 @@
 
 /* GENERAL TAGS */
 
+html, body{
+  &.lock{
+    overflow: hidden;
+  }
+}
 body{
   background-color: @dark;
   color: @white;
@@ -95,7 +100,31 @@ footer{
     padding-right: 20px;
   }
 }
+strong{
+  font-family: 'ClearSansBold';
+}
 
+#mbr-prealader{
+  position: fixed;
+  background-color: #212121;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  display: table;
+  text-align: center;
+  z-index: 9999;
+  img{
+    width: initial;
+  }
+  &>div{
+    display: table-cell;
+    vertical-align: middle;
+  }
+  &.preloader-hide{
+    transition: all 750ms cubic-bezier(0.39, 0.575, 0.565, 1);
+    transform: translateX(-100%);
+  }
+}
 /* GENERAL CLASSES */
 .hidden{
   display: none;
@@ -132,23 +161,26 @@ footer{
 }
 .mbr-header{
   width: 100%;
-  height: @menu-height*2;
+  height: @menu-height;
+  padding: 23px 30px;
   background-color: transparent;
-  padding: 58px 30px;
+  position: relative;
+  z-index: 9998;
+  // padding: 58px 30px;
   transition: all 400ms;
-  @media screen and (max-width: @screen-desktop){
-    height: @menu-height;
-    padding: 23px 30px;
-  }
+  // @media screen and (max-width: @screen-desktop){
+  //   height: @menu-height;
+  //   padding: 23px 30px;
+  // }
   .mbr-nav{
     ul{
       margin: 0;
     }
   }
   @media screen and (max-width: @screen-mobile){
-    margin-top: -150px;
+    margin-top: -200px;
     padding: 0;
-    height: 200px;
+    height: 250px;
     border-bottom: 1px solid @bronse;
     .mbr-nav{
       float: initial;
@@ -173,7 +205,8 @@ footer{
         // padding: 14px 0 0 10px;
         padding: 0;
         text-transform: uppercase;
-        &:nth-child(4){
+        
+        &:nth-child(5){
           width: 50px;
           position: absolute;
           right: 50px;
@@ -253,12 +286,21 @@ footer{
     padding: 2px 27px;
     overflow: hidden;
     text-transform: uppercase;
+    &:nth-child(3){
+      // border: 0;
+    }
     &:nth-child(4){
       border:0;
+      @media screen and (max-width: @screen-mobile){
+        border-bottom: 1px solid @bronse;
+      }
     }
     &:last-child{
       border:0;
       display: none;
+    }
+    &.active a{
+      color: @bronse;
     }
   }
   @media screen and (max-width: @screen-mobile){
@@ -397,6 +439,11 @@ footer{
     width: 184px;
     height: 44px;
     border-width: 1px;
+  }
+  &--dark{
+    background-color: @dark;
+    color: @bronse;
+    border: 0;
   }
 }
 

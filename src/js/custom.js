@@ -1,8 +1,166 @@
 /**************************************/
 /* Custom JavaScript files supervisor */
 /**************************************/
+function Loader(callback){
+  var preloader = $("#mbr-prealader"),
+      imitationTimer,
+      imitation = 0,
+      self = this,
+      progressbar = Snap("svg#progress #progressbar");
+
+  if(getCookie('preloaderShowen')){
+    // src = "/sites/all/themes/mrbrooks"; // in html by default
+  } else{
+    setCookie('preloaderShowen',1);
+    preloader.find("img").attr("src","/sites/all/themes/mrbrooks/img/images/loader.gif");
+  }
+  // var gifloader = $("#gifloader");
+  // var gifsrc = gifloader.attr("src");
+  //     gifloader.attr("src", "");
+  // setTimeout(function(){
+  //   gifloader.show();
+  //   gifloader.attr("src", gifsrc);
+  // },100);
+  
+  function hide(){
+    $("body").css("overflow","auto");
+    preloader.addClass("preloader-hide");
+  }
+  
+  self.preloaderHide = function (){
+    // console.log("In preloaderHide");
+    clearInterval(imitationTimer);
+    imitationTimer = setInterval(imitationProgress,20);
+  };
+
+  function imitationProgress(){
+    if(progressbar.attr("width") < 144){
+      progressbar.attr("width",imitation += Math.ceil(Math.random()*4));
+    } else{
+      clearInterval(imitationTimer);
+      progressbar.attr("width",144);
+      hide();
+      // console.log( typeof(callback));
+      if (typeof(callback) === "function"){
+        callback();
+      }
+      
+    }
+    
+  }
+
+  self.init = function(){
+    preloader.height($(window).height());
+    preloader.width($(window).width());
+    progressbar.attr("width",0);
+    imitationTimer = setInterval(imitationProgress, 750);
+  };
+
+}
+
+function updateArticle(){
+  var article_wrapper = $("#mbr-article-content-wrap");
+  var content = $("#mbr-article-content-wrap>.mbr-article__content");
+  var target = $("#mbr-article-content-target");
+  var self = this;
+
+  function setLarge(){
+    content.appendTo(target);
+  }
+  function setNormal(){
+    content.appendTo(article_wrapper);
+  }
+
+  self.update = function (){
+    if( $(window).width() >= 1600){
+      setLarge();
+    } else{
+      setNormal();
+    }
+  };
+}
+
+function vimeo(){
+  var videos = $(".mbr-vimeo-play");
+  // var ids = [];
+  // videos.each(function(){
+  //   ids.push($(this).attr('data-video-id'));
+  //   $(this).attr('id',$(this).attr('data-vimeo-id'));
+  // });
+  // var vimeo_players = [];
+  // for(var i = 0; i < ids.length; i++){
+  //   vimeo_players.push(new Vimeo.Player('video-'+ids[i]));
+  // }
+  // this.players = vimeo_players;
+  videos.on('click',function(){
+    var sibl = $(this).siblings();
+    var w = sibl.width();
+    sibl.css({
+      'opacity': 0,
+      // 'position': 'absolute',
+      'z-index': -1,
+      'width': w
+    });
+    var id = $(this).hide().attr('data-video-id');
+    var parent = $(this).parent();
+    var width = parent.width();
+    parent.append($('<div class="video-wrapper" id="video-'+id+'"></div>'));
+    var player = new Vimeo.Player('video-'+id,{
+      id: id,
+      width: w
+    });
+    player.play();
+  });
+}
+
+function updateFullhieght(){
+  var items = $(".fullheight");
+  this.update = function(){
+    items.css('height',$(window).height() - 70);
+  };
+}
+function windowUpdater(func_arr){
+  var self = this, timer;
+
+  function update(){
+    for(var i = 0; i < func_arr.length; i++){
+      func_arr[i]();
+    }
+  }
+
+
+  function init(){
+    $(window).on('resize',function(){
+      clearTimeout(timer);
+      timer = setTimeout(function(){
+        update();
+      },200);
+    });
+    $(window).trigger('resize');
+  }
+  init();
+}
+
+$(window).on("load",function(){
+  loader.preloaderHide();
+});
+// $(window).load(function(){
+//   var preloader = $("#preloader");
+//   preloader.animate({opacity : 0}, 1000,function(){
+//     $('html, body').removeClass('lock');
+//     preloader.hide();
+//   });
+// });
+var update_article, loader, update_fullhieght;
 
 $(document).ready(function() {
+  // update_article = new updateArticle(); //MBR DELETE
+  update_fullhieght = new updateFullhieght();
+  // var updater = new windowUpdater([update_article.update, update_fullhieght.update]);
+  var updater = new windowUpdater([update_fullhieght.update]);
+  
+  loader = new Loader(); //MBR DELETE
+  loader.init();
 
     /* Custom */
 
@@ -27,15 +185,18 @@ $(document).ready(function() {
     nav: true,
     navText: [" ", " "]
   });
+  
+  var vimeos = new vimeo();
 
   $(".mbr-portfolio").galleryGrid({
-    margin: 20,
+    margin: 10,
     // selectGallery: ".gallery",
     selectFirst: ".mbr-portfolio__first-block",
     selectLeft: ".mbr-portfolio__left-block",
     selectCenter: ".mbr-portfolio__center-block",
     selectRight: ".mbr-portfolio__right-block",
     selectItem: ".mbr-portfolio__item",
+    selectFilterList: "#mbr-filter-list",
     addGalleryMargin: false,
     callback: function(){
       // console.log("in callback");
@@ -49,20 +210,22 @@ $(document).ready(function() {
     }
   });
 
-  if(window.innerWidth < 768){
-    $("#mbr-main-private").height(window.innerHeight);
-  }
 
-  function portfolioFilter(){
-    var filterList = $("#mbr-filter-list");
-    $("#mbr-filter,#mbr-filter-accept").on("click", function(){
-      filterList.slideToggle(200);
-    });
-    filterList.find("li").on("click",function(){
-      $(this).toggleClass("active");
-    });
-  }
-  portfolioFilter();
+
+  // if(window.innerWidth < 768){
+    $("#mbr-main-anim").height(window.innerHeight - 70);
+  // }
+
+  // function portfolioFilter(){
+  //   var filterList = $("#mbr-filter-list");
+  //   $("#mbr-filter,#mbr-filter-accept").on("click", function(){
+  //     filterList.slideToggle(200);
+  //   });
+  //   filterList.find("li").on("click",function(){
+  //     $(this).toggleClass("active");
+  //   });
+  // }
+  // portfolioFilter();
   function evalTrueColNumber(widths){ // [320, 768, 1024, 1600]
     var w = window.innerWidth, n = 0;
     while( w >= widths[n++] ){
@@ -83,6 +246,7 @@ $(document).ready(function() {
       }, 1000);
     });
   }
+
   var onActionFlag = true;
   $("#mobile-menu-btn").on("click",function(){
     if (onActionFlag){
@@ -91,10 +255,6 @@ $(document).ready(function() {
       setTimeout(function(){onActionFlag = true;},500);
     }
   });
-
-
-
-
 
   function loadOptimVideo(selector){
     var vid = $(selector); 
@@ -118,7 +278,38 @@ $(document).ready(function() {
       vid.get(0).load();
     }
   }
-  loadOptimVideo("#mbr-video-main");
+  
+  function fullscreenVideo(selector){
+    loadOptimVideo(selector);
+    var vid = $(selector);
+    var jvid = vid.get(0);
+    $("#mbr-play>svg").on("click",function(){
+      if (jvid.requestFullscreen) {
+        jvid.requestFullscreen();
+      } else if (jvid.msRequestFullscreen) {
+        jvid.msRequestFullscreen();
+      } else if (jvid.mozRequestFullScreen) {
+        jvid.mozRequestFullScreen();
+      } else if (jvid.webkitRequestFullscreen) {
+        jvid.webkitRequestFullscreen();
+      }
+      jvid.play();
+    });
+    if(jvid){
+      jvid.onended = function(){
+        if (document.exitFullscreen) {
+          document.exitFullscreen(); 
+        } else if (document.msExitFullscreen) {
+          document.msExitFullscreen();
+        } else if (document.mozCancelFullScreen) {
+          document.mozCancelFullScreen();
+        } else if (document.webkitExitFullscreen) {
+          document.webkitExitFullscreen();
+        }
+      };
+    }
+  }
+  fullscreenVideo("#mbr-video-main");
 
   function videoScrolling(keypoints, speed){
     var vid = document.getElementById("mbr-video-main");
@@ -212,7 +403,12 @@ $(document).ready(function() {
         },50);
       }
     }
-    $("#down-btn").click(videoEnd);
+    // $("#down-btn").click(videoEnd);
+    $("#down-btn").click(function(){
+      $('html, body').animate({
+        scrollTop: $(window).height()
+      }, 1000);
+    });
     // function setSectionHeight(h){
     //   $("#mbr-main-anim").height(h);
     // }
@@ -220,10 +416,10 @@ $(document).ready(function() {
       if( $(window).width() > 768){
         afterLoadingVideo(function(){
           // setSectionHeight(vid.duration*speed);
-          $("body").css("overflow","hidden");
-          extendKeypoints();
-          wheelEventControl();
-          scrollEventControl();
+          // $("body").css("overflow","hidden");
+          // extendKeypoints();
+          // wheelEventControl();
+          // scrollEventControl();
         });
       }
     }
@@ -339,11 +535,12 @@ $(document).ready(function() {
         } else{
           scroll = scroll_top_arr[index];
         }
-        $('html, body').animate({
+        $('html, body').css('overflow','hidden').animate({
           scrollTop: scroll
         }, 500,function(){
           flagAllowUpdate = true;
           updateView();
+          $('html, body').css('overflow','auto');
         });
       }
       function sectionKeeper(){
@@ -408,7 +605,7 @@ $(document).ready(function() {
           // console.log(current_section);
           sectionKeeper();
           updateView();
-        },50);
+        },200);
       });
       // setInterval(function(){
       //   // if(current_scroll != $("body").scrollTop()){
@@ -437,6 +634,57 @@ $(document).ready(function() {
 
     
   // }
+
+  $('.ajax-submit').submit(function(){
+    var form = $(this), error = false;
+    var btn = form.find('[type="submit"]'),
+        action = form.attr("data-submit-url");
+
+    
+
+    form.find('input, textarea').each( function(){
+      if ($(this).val() === '') {
+        $(this).addClass("invalid");
+        error = true;
+      }
+      else{
+        $(this).removeClass("invalid");
+      }
+    });
+    if (!error){
+      btn.attr('disabled', 'disabled');
+      var data = form.serialize();
+      $.ajax({
+         type: 'POST',
+         url: action,
+         dataType: 'json',
+         data: data, 
+           beforeSend: function(data) { 
+              btn.text("Идет отправка...");
+            },
+           success: function(data){ 
+            if (data['error']) { 
+              btn.text("Ошибка");
+              btn.prop('disabled', false);
+            } else {
+              btn.text("Отправлено");
+              btn.prop('disabled', false);
+            }
+           },
+           error: function (xhr, ajaxOptions, thrownError) {
+            btn.val("Ошибка");
+            btn.prop('disabled', false);
+            alert(xhr.status); 
+            alert(xhr.responseText);
+            alert(thrownError);
+           },
+           complete: function(data) {
+            btn.prop('disabled', false);
+           }
+           });
+    }
+    return false;
+  });
 
   function suffleLetters(opt){
     var def_opt = $.extend({
@@ -605,7 +853,7 @@ $(document).ready(function() {
       });
       var customMapTypeId = 'custom_style';
       map = new google.maps.Map(document.getElementById('mbr-map'), {
-        center: {lat: 59.945145, lng: 30.292703},
+        center: {lat: 59.922290, lng: 30.251070},
         zoom: 18,
         disableDefaultUI: true,
         mapTypeControlOptions: {
@@ -626,26 +874,52 @@ $(document).ready(function() {
       // Origins, anchor positions and coordinates of the marker increase in the X
       // direction to the right and in the Y direction down.
       var image = {
-        url: 'img/svg/marker.svg',
+        url: '/sites/all/themes/mrbrooks/img/svg/marker.svg',
         // This marker is 20 pixels wide by 32 pixels high.
-        size: new google.maps.Size(80, 100),
+        size: new google.maps.Size(100, 100),
         // The origin for this image is (0, 0).
         origin: new google.maps.Point(0, 0),
         // The anchor for this image is the base of the flagpole at (0, 32).
-        anchor: new google.maps.Point(40, 100)
+        anchor: new google.maps.Point(50, 100)
       };
       // Shapes define the clickable region of the icon. The type defines an HTML
       // <area> element 'poly' which traces out a polygon as a series of X,Y points.
       // The final coordinate closes the poly by connecting to the first coordinate.
       var marker = new google.maps.Marker({
-          position: {lat: 59.945145, lng: 30.292703},
+          position: {lat: 59.922290, lng: 30.251070},
           map: map,
           icon: image,
           // shape: shape,
           title: "Mr.Brooks",
-          zIndex: 1
+          zIndex: 1,
+          optimized: false
         });
     }
   // }
 // });
 
+/*YANDEX METRIKA*/
+(function (d, w, c) {
+    (w[c] = w[c] || []).push(function() {
+        try {
+            w.yaCounter23922124 = new Ya.Metrika({
+                id:23922124,
+                clickmap:true,
+                trackLinks:true,
+                accurateTrackBounce:true,
+                webvisor:true
+            });
+        } catch(e) { }
+    });
+
+    var n = d.getElementsByTagName("script")[0],
+        s = d.createElement("script"),
+        f = function () { n.parentNode.insertBefore(s, n); };
+    s.type = "text/javascript";
+    s.async = true;
+    s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+    if (w.opera == "[object Opera]") {
+        d.addEventListener("DOMContentLoaded", f, false);
+    } else { f(); }
+})(document, window, "yandex_metrika_callbacks");

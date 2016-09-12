@@ -79,12 +79,38 @@
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
-        <header>
+        <div id="mbr-prealader">
+  <div>
+    <img src="/img/images/loader.gif" alt="">
+    <div>
+      <svg id="progress" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="144" height="2" viewBox="0 0 144 2">
+        <defs>
+          <style>
+            .cls-1 {
+              fill: #585858;
+            }
+
+            .cls-2 {
+              fill: #fff;
+            }
+            
+          </style>
+        </defs>
+        <g>
+          <rect width="144" height="2" class="cls-1"/>
+          <rect id="progressbar"  height="2" class="cls-2 active"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</div>
+<header>
   <!-- (.mbr-header>div.logo>img^+.mbr-nav>ul>(li>a)*4) -->
   <div class="mbr-header">
     <div class="mbr-nav">
       <ul>
         <li><a class="shuffleOnHover" href="projects.html">Проекты</a></li>
+        <li><a class="shuffleOnHover" href="spec-projects.html">Спецпроекты</a></li>
         <li><a class="shuffleOnHover" href="blog.html">Блог</a></li>
         <li><a class="shuffleOnHover" href="contacts.html">Контакты</a></li>
         <li class="hidden"><a class="shuffleOnHover" href="">EN</a></li>
@@ -120,87 +146,244 @@
   </div>
 </div>
 <div class="mbr-portfolio">
-    <div class="mbr-portfolio__first-block">
-      <a href="project.html">
-        <div class="mbr-portfolio__item withripple">
-          <div class="preview"></div> <!-- <img class="pic" src="http://placehold.it/1250/fff/111"> -->
-          <div class="onhover">
-            <!-- h3.mbr-h3{Lorem ipsum dolor}+p.desc{Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!}+.more>span{Далее}+.arrow -->
-            <h3 class="mbr-h3">Lorem ipsum dolor</h3>
-            <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!</p>
-              <div class="more">
-                <img class="arrow" src="img/svg/arrow-right-bronse.svg" alt="">
-                <span>Далее</span>
-              </div>
+  <div data-category="naming" class="mbr-portfolio__item withripple">
+    <a href="project.html">
+      <div class="preview"></div> <!-- <img class="pic" src="http://placehold.it/1250/fff/111"> -->
+      <div class="onhover">
+        <!-- h3.mbr-h3{Lorem ipsum dolor}+p.desc{Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!}+.more>span{Далее}+.arrow -->
+        <h3 class="mbr-h3">Lorem ipsum dolor</h3>
+        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!</p>
+          <div class="more">
+            <img class="arrow" src="img/svg/arrow-right-bronse.svg" alt="">
+            <span>Далее</span>
           </div>
-        </div>
-      </a>
-      <a href="article.html">
-        <div class="mbr-portfolio__item">
-          <!-- <img class="pic" src="http://placehold.it/1250x615/fff/111"> -->
-          <div class="article">
-            <h3 class="mbr-h3">Lorem ipsum dolor</h3>
-            <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!</p>
-
-              <div class="more">
-                <img class="arrow" src="img/svg/arrow-right-bronse.svg" alt="">
-                <span>Далее</span>
-              </div>
-          </div>
-        </div>
-      </a>
-      <a href="project.html">
-        <div class="mbr-portfolio__item ">
-          <div class="preview"></div>
-          <div class="onhover small">
-            <!-- h3.mbr-h3{Lorem ipsum dolor}+p.desc{Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!}+.more>span{Далее}+.arrow -->
-            <h3 class="mbr-h3">Lorem ipsum dolor</h3>
-            <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!</p>
-              <div class="more">
-                <img class="arrow" src="img/svg/arrow-right-bronse.svg" alt="">
-                <span>Далее</span>
-              </div>
-          </div>
-        </div>
-      </a>
-      <div class="mbr-portfolio__item">
-        <div class="preview"></div>
       </div>
-    </div>
-    <div class="mbr-portfolio__center-block">
-      <div class="mbr-portfolio__item">
-        <div class="preview"></div>
-      </div>
-      <div class="mbr-portfolio__item">
-        <div class="preview"></div>
-      </div>
-      <div class="mbr-portfolio__item">
-        <div class="preview"></div>
-      </div>
-    </div>
-    <div class="mbr-portfolio__left-block">
-      <div class="mbr-portfolio__item">
-        <div class="preview"></div>
-      </div>
-      <div class="mbr-portfolio__item">
-        <div class="preview"></div>
-      </div>
-      <div class="mbr-portfolio__item">
-        <div class="preview"></div>
-      </div>
-    </div>
-    <div class="mbr-portfolio__right-block">
-      <div class="mbr-portfolio__item">
-        <div class="preview"></div>
-      </div>
-      <div class="mbr-portfolio__item">
-        <div class="preview"></div>
-      </div>
-      <div class="mbr-portfolio__item">
-        <div class="preview"></div>
-      </div>
-    </div>
+    </a>
   </div>
+  <div data-category="firmstyle" class="mbr-portfolio__item">
+    <a href="article.html">
+      <div class="article">
+        <h3 class="mbr-h3">Lorem ipsum dolor</h3>
+        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!</p>
+
+          <div class="more">
+            <img class="arrow" src="img/svg/arrow-right-bronse.svg" alt="">
+            <span>Далее</span>
+          </div>
+      </div>
+    </a>
+  </div>
+  <div data-category="naming" class="mbr-portfolio__item withripple">
+    <a href="project.html">
+      <div class="preview"></div> <!-- <img class="pic" src="http://placehold.it/1250/fff/111"> -->
+      <div class="onhover">
+        <!-- h3.mbr-h3{Lorem ipsum dolor}+p.desc{Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!}+.more>span{Далее}+.arrow -->
+        <h3 class="mbr-h3">Lorem ipsum dolor</h3>
+        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!</p>
+          <div class="more">
+            <img class="arrow" src="img/svg/arrow-right-bronse.svg" alt="">
+            <span>Далее</span>
+          </div>
+      </div>
+    </a>
+  </div>
+  <div data-category="naming" class="mbr-portfolio__item withripple">
+    <a href="project.html">
+      <div class="preview"></div> <!-- <img class="pic" src="http://placehold.it/1250/fff/111"> -->
+      <div class="onhover">
+        <!-- h3.mbr-h3{Lorem ipsum dolor}+p.desc{Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!}+.more>span{Далее}+.arrow -->
+        <h3 class="mbr-h3">Lorem ipsum dolor</h3>
+        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!</p>
+          <div class="more">
+            <img class="arrow" src="img/svg/arrow-right-bronse.svg" alt="">
+            <span>Далее</span>
+          </div>
+      </div>
+    </a>
+  </div>
+  <div data-category="naming sites" class="mbr-portfolio__item withripple">
+    <a href="project.html">
+      <div class="preview"></div> <!-- <img class="pic" src="http://placehold.it/1250/fff/111"> -->
+      <div class="onhover">
+        <!-- h3.mbr-h3{Lorem ipsum dolor}+p.desc{Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!}+.more>span{Далее}+.arrow -->
+        <h3 class="mbr-h3">Lorem ipsum dolor</h3>
+        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!</p>
+          <div class="more">
+            <img class="arrow" src="img/svg/arrow-right-bronse.svg" alt="">
+            <span>Далее</span>
+          </div>
+      </div>
+    </a>
+  </div>
+  <div data-category="sites" class="mbr-portfolio__item withripple">
+    <a href="project.html">
+      <div class="preview"></div> <!-- <img class="pic" src="http://placehold.it/1250/fff/111"> -->
+      <div class="onhover">
+        <!-- h3.mbr-h3{Lorem ipsum dolor}+p.desc{Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!}+.more>span{Далее}+.arrow -->
+        <h3 class="mbr-h3">Lorem ipsum dolor</h3>
+        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!</p>
+          <div class="more">
+            <img class="arrow" src="img/svg/arrow-right-bronse.svg" alt="">
+            <span>Далее</span>
+          </div>
+      </div>
+    </a>
+  </div>
+  <div data-category="naming" class="mbr-portfolio__item withripple">
+    <a href="project.html">
+      <div class="preview"></div> <!-- <img class="pic" src="http://placehold.it/1250/fff/111"> -->
+      <div class="onhover">
+        <!-- h3.mbr-h3{Lorem ipsum dolor}+p.desc{Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!}+.more>span{Далее}+.arrow -->
+        <h3 class="mbr-h3">Lorem ipsum dolor</h3>
+        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!</p>
+          <div class="more">
+            <img class="arrow" src="img/svg/arrow-right-bronse.svg" alt="">
+            <span>Далее</span>
+          </div>
+      </div>
+    </a>
+  </div>
+  <div data-category="naming" class="mbr-portfolio__item withripple">
+    <a href="project.html">
+      <div class="preview"></div> <!-- <img class="pic" src="http://placehold.it/1250/fff/111"> -->
+      <div class="onhover">
+        <!-- h3.mbr-h3{Lorem ipsum dolor}+p.desc{Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!}+.more>span{Далее}+.arrow -->
+        <h3 class="mbr-h3">Lorem ipsum dolor</h3>
+        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!</p>
+          <div class="more">
+            <img class="arrow" src="img/svg/arrow-right-bronse.svg" alt="">
+            <span>Далее</span>
+          </div>
+      </div>
+    </a>
+  </div>
+  <div data-category="" class="mbr-portfolio__item withripple">
+    <a href="project.html">
+      <div class="preview"></div> <!-- <img class="pic" src="http://placehold.it/1250/fff/111"> -->
+      <div class="onhover">
+        <!-- h3.mbr-h3{Lorem ipsum dolor}+p.desc{Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!}+.more>span{Далее}+.arrow -->
+        <h3 class="mbr-h3">Lorem ipsum dolor</h3>
+        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!</p>
+          <div class="more">
+            <img class="arrow" src="img/svg/arrow-right-bronse.svg" alt="">
+            <span>Далее</span>
+          </div>
+      </div>
+    </a>
+  </div>
+  <div data-category="graph" class="mbr-portfolio__item withripple">
+    <a href="project.html">
+      <div class="preview"></div> <!-- <img class="pic" src="http://placehold.it/1250/fff/111"> -->
+      <div class="onhover">
+        <!-- h3.mbr-h3{Lorem ipsum dolor}+p.desc{Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!}+.more>span{Далее}+.arrow -->
+        <h3 class="mbr-h3">Lorem ipsum dolor</h3>
+        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!</p>
+          <div class="more">
+            <img class="arrow" src="img/svg/arrow-right-bronse.svg" alt="">
+            <span>Далее</span>
+          </div>
+      </div>
+    </a>
+  </div>
+  <div data-category="sites print photo" class="mbr-portfolio__item withripple">
+    <a href="project.html">
+      <div class="preview"></div> <!-- <img class="pic" src="http://placehold.it/1250/fff/111"> -->
+      <div class="onhover">
+        <!-- h3.mbr-h3{Lorem ipsum dolor}+p.desc{Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!}+.more>span{Далее}+.arrow -->
+        <h3 class="mbr-h3">Lorem ipsum dolor</h3>
+        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!</p>
+          <div class="more">
+            <img class="arrow" src="img/svg/arrow-right-bronse.svg" alt="">
+            <span>Далее</span>
+          </div>
+      </div>
+    </a>
+  </div>
+  <div data-category="naming" class="mbr-portfolio__item withripple">
+    <a href="project.html">
+      <div class="preview"></div> <!-- <img class="pic" src="http://placehold.it/1250/fff/111"> -->
+      <div class="onhover">
+        <!-- h3.mbr-h3{Lorem ipsum dolor}+p.desc{Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!}+.more>span{Далее}+.arrow -->
+        <h3 class="mbr-h3">Lorem ipsum dolor</h3>
+        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!</p>
+          <div class="more">
+            <img class="arrow" src="img/svg/arrow-right-bronse.svg" alt="">
+            <span>Далее</span>
+          </div>
+      </div>
+    </a>
+  </div>
+  <div data-category="naming pack video sites" class="mbr-portfolio__item withripple">
+    <a href="project.html">
+      <div class="preview"></div> <!-- <img class="pic" src="http://placehold.it/1250/fff/111"> -->
+      <div class="onhover">
+        <!-- h3.mbr-h3{Lorem ipsum dolor}+p.desc{Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!}+.more>span{Далее}+.arrow -->
+        <h3 class="mbr-h3">Lorem ipsum dolor</h3>
+        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!</p>
+          <div class="more">
+            <img class="arrow" src="img/svg/arrow-right-bronse.svg" alt="">
+            <span>Далее</span>
+          </div>
+      </div>
+    </a>
+  </div>
+  <div data-category="naming" class="mbr-portfolio__item withripple">
+    <a href="project.html">
+      <div class="preview"></div> <!-- <img class="pic" src="http://placehold.it/1250/fff/111"> -->
+      <div class="onhover">
+        <!-- h3.mbr-h3{Lorem ipsum dolor}+p.desc{Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!}+.more>span{Далее}+.arrow -->
+        <h3 class="mbr-h3">Lorem ipsum dolor</h3>
+        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!</p>
+          <div class="more">
+            <img class="arrow" src="img/svg/arrow-right-bronse.svg" alt="">
+            <span>Далее</span>
+          </div>
+      </div>
+    </a>
+  </div>
+  <div data-category="naming" class="mbr-portfolio__item withripple">
+    <a href="project.html">
+      <div class="preview"></div> <!-- <img class="pic" src="http://placehold.it/1250/fff/111"> -->
+      <div class="onhover">
+        <!-- h3.mbr-h3{Lorem ipsum dolor}+p.desc{Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!}+.more>span{Далее}+.arrow -->
+        <h3 class="mbr-h3">Lorem ipsum dolor</h3>
+        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!</p>
+          <div class="more">
+            <img class="arrow" src="img/svg/arrow-right-bronse.svg" alt="">
+            <span>Далее</span>
+          </div>
+      </div>
+    </a>
+  </div>
+  <div class="mbr-portfolio__item withripple">
+    <a href="project.html">
+      <div class="preview"></div> <!-- <img class="pic" src="http://placehold.it/1250/fff/111"> -->
+      <div class="onhover">
+        <!-- h3.mbr-h3{Lorem ipsum dolor}+p.desc{Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!}+.more>span{Далее}+.arrow -->
+        <h3 class="mbr-h3">Lorem ipsum dolor</h3>
+        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!</p>
+          <div class="more">
+            <img class="arrow" src="img/svg/arrow-right-bronse.svg" alt="">
+            <span>Далее</span>
+          </div>
+      </div>
+    </a>
+  </div>
+  <div data-category="naming" class="mbr-portfolio__item withripple">
+    <a href="project.html">
+      <div class="preview"></div> <!-- <img class="pic" src="http://placehold.it/1250/fff/111"> -->
+      <div class="onhover">
+        <!-- h3.mbr-h3{Lorem ipsum dolor}+p.desc{Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!}+.more>span{Далее}+.arrow -->
+        <h3 class="mbr-h3">Lorem ipsum dolor</h3>
+        <p class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti dolorem itaque similique sint doloribus eaque obcaecati assumenda aliquid aut!</p>
+          <div class="more">
+            <img class="arrow" src="img/svg/arrow-right-bronse.svg" alt="">
+            <span>Далее</span>
+          </div>
+      </div>
+    </a>
+  </div>
+</div>
   <div class="centered">
     <button id="mbr-load-more" class="btn btn-default mbr-btn noshuffle">Загрузить еще</button>
   </div>

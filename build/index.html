@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru" class="no-js" prefix="og: http://ogp.me/ns#">
+<html lang="ru" class="no-js" prefix="og: http://ogp.me/ns#" class="lock">
 
     <head>
     <title></title>
@@ -73,18 +73,44 @@
     <link rel="stylesheet" href="css/style.min.css" />
 </head>
 
-    <body>
+    <body class="lock">
 
         <!--[if lt IE 8]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
-        <header>
+        <div id="mbr-prealader">
+  <div>
+    <img src="/img/images/loader.gif" alt="">
+    <div>
+      <svg id="progress" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="144" height="2" viewBox="0 0 144 2">
+        <defs>
+          <style>
+            .cls-1 {
+              fill: #585858;
+            }
+
+            .cls-2 {
+              fill: #fff;
+            }
+            
+          </style>
+        </defs>
+        <g>
+          <rect width="144" height="2" class="cls-1"/>
+          <rect id="progressbar"  height="2" class="cls-2 active"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</div>
+<header>
   <!-- (.mbr-header>div.logo>img^+.mbr-nav>ul>(li>a)*4) -->
   <div class="mbr-header">
     <div class="mbr-nav">
       <ul>
         <li><a class="shuffleOnHover" href="projects.html">Проекты</a></li>
+        <li><a class="shuffleOnHover" href="spec-projects.html">Спецпроекты</a></li>
         <li><a class="shuffleOnHover" href="blog.html">Блог</a></li>
         <li><a class="shuffleOnHover" href="contacts.html">Контакты</a></li>
         <li class="hidden"><a class="shuffleOnHover" href="">EN</a></li>
@@ -103,21 +129,64 @@
           <section id="mbr-main-anim">
   <div class="mbr-animation-container">
     <video id="mbr-video-main" tabindex="0" preload data-urls="img/vids/mbr-vid-1280.mp4,img/vids/mbr-vid-1920.mp4,img/vids/mbr-vid-2560.mp4">
-      <!-- <source src="img/vids/main.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'> -->
     </video>
   </div>
+  <div id="mbr-private-marketing">
+    <div>
+      <div class="mbr-slide-down-up"><div>private marketing</div></div>
+      <div id="mbr-play">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="39" height="39" viewBox="0 0 39 39">
+          <defs>
+            <style>
+              @keyframes dash {
+                to {
+                  stroke-dashoffset: 400;
+                }
+              }
+              .cls-1 {
+                stroke: #e1bb9a;
+                stroke-width: 1px;
+                fill: none;
+              }
+              .cls-3 {
+                stroke: #e1bb9a;
+                stroke-width: 2px;
+                stroke-dasharray: 200;
+                fill: none;
+                animation: dash 3s ease-in infinite;
+              }
+
+              .cls-2 {
+                fill: #e1bb9a;
+                fill-rule: evenodd;
+              }
+            </style>
+          </defs>
+          <g>
+            <circle cx="19.5" cy="19.5" r="19" class="cls-1"/>
+            <circle cx="19.5" cy="19.5" r="18" class="cls-3"/>
+            <path d="M17.003,23.998 L17.003,14.000 L24.999,18.954 L17.003,23.998 Z" class="cls-2"/>
+          </g>
+        </svg>
+      </div>
+      <div class="what-we-do">
+        Мы создаем индивидуальные маркетинговые решения, в результате которых ваш целевой клиент выбирает именно ваш продукт среди конкурентов.
+      </div>
+    </div>
+  </div>
+  
   <div id="mbr-find-answer" class="mbr-find-answer">
-    <p>Тому, кто в поиске ответов</p>
+    <!-- <p>Тому, кто в поиске ответов</p> -->
     <div>
       <!-- <img src="img/svg/arrow-down.svg" alt=""> -->
       <img src="img/svg/arrow-down.svg" alt="">
       <!-- <img src="img/svg/arrow-down.svg" alt=""> -->
     </div>
   </div>
-  <div id="down-btn">Пропустить</div>
+  <!-- <div id="down-btn">Пропустить</div> -->
 </section>
 
-          <section id="mbr-main-private">
+          <!-- <section id="mbr-main-private">
   <div class="shuffle">
     <div>private</div>
     <div>marketing</div>
@@ -128,7 +197,7 @@
       <img src="img/svg/arrow-down.svg" alt="">
     </div>
   </div>
-</section>
+</section> -->
 
           <section>
   <div class="mbr-portfolio">
@@ -214,44 +283,7 @@
       </div>
     </div>
   </div>
-  <div class="row mbr-clients">
-    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
-      <a href="project.html">
-        <img src="img/svg/Adidas.svg" alt="">
-      </a>
-    </div>
-    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
-      <a href="project.html">
-        <img src="img/svg/STRIDE.svg" alt="">
-      </a>
-    </div>
-    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
-      <a href="project.html">
-        <img src="img/svg/A3.svg" alt="">
-      </a>
-    </div>
-    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
-      <a href="project.html">
-        <img src="img/svg/Adidas.svg" alt="">
-      </a>
-    </div>
-    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
-      <a href="project.html">
-        <img src="img/svg/Adidas.svg" alt="">
-      </a>
-    </div>
-    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
-      <a href="project.html">
-        <img src="img/svg/Adidas.svg" alt="">
-      </a>
-    </div>
-    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
-      <a href="project.html">
-        <img src="img/svg/Adidas.svg" alt="">
-      </a>
-    </div>
-    <!-- <div class="col-lg-3 col-md-3 col-sm-3"><img src="img/svg/Adidas.svg" alt=""></div> -->
-  </div>
+  
   <!-- <div class="mbr-clients">
     <div id="mbr-clients-slider">
       <div class="col-lg-3 col-md-3 col-sm-3"><img src="img/svg/Adidas.svg" alt=""></div>

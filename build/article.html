@@ -79,12 +79,38 @@
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
 <![endif]-->
 
-        <header>
+        <div id="mbr-prealader">
+  <div>
+    <img src="/img/images/loader.gif" alt="">
+    <div>
+      <svg id="progress" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="144" height="2" viewBox="0 0 144 2">
+        <defs>
+          <style>
+            .cls-1 {
+              fill: #585858;
+            }
+
+            .cls-2 {
+              fill: #fff;
+            }
+            
+          </style>
+        </defs>
+        <g>
+          <rect width="144" height="2" class="cls-1"/>
+          <rect id="progressbar"  height="2" class="cls-2 active"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</div>
+<header>
   <!-- (.mbr-header>div.logo>img^+.mbr-nav>ul>(li>a)*4) -->
   <div class="mbr-header">
     <div class="mbr-nav">
       <ul>
         <li><a class="shuffleOnHover" href="projects.html">Проекты</a></li>
+        <li><a class="shuffleOnHover" href="spec-projects.html">Спецпроекты</a></li>
         <li><a class="shuffleOnHover" href="blog.html">Блог</a></li>
         <li><a class="shuffleOnHover" href="contacts.html">Контакты</a></li>
         <li class="hidden"><a class="shuffleOnHover" href="">EN</a></li>
@@ -102,7 +128,7 @@
         <main class="mbr-container bg-light-grey nomargin fullwidth">
           <!-- .row>(.col-lg-8>(.mbr-banner>h1{Some text}+span{21.12.2015})+.mbr-article__controls+hr.mbr-hr+.mbr-article__content)+(.col-lg-4>(.col-lg-6.mbr-blog__post>(a[href="article.html"]>img[src="img/images/620x620.png"])+span{21.12.2015}+(a[href="article.html"]>h2{Выпуск "Личный контакт" с Тимуром Мухамедовым}))*6) -->
 <div class="row mbr-container">
-  <div class="col-lg-8 padding-top col-md-12 mbr-article__banner">
+  <div id="mbr-article-content-target" class="col-lg-8 padding-top col-md-12 mbr-article__banner">
     <div class="mbr-banner">
       <span>21.12.2015</span>
       <h1>Some text </h1>
@@ -135,8 +161,8 @@
       </a>
     </div>
   </div>
-  <div class="col-lg-8 col-lg-offset-0 padding-top col-md-6 col-md-offset-1 col-sm-8 col-sm-offset-2 col-xs-12">
-    <div class="mbr-article__content">
+  <div id='mbr-article-content-wrap' class="col-lg-8 col-lg-offset-0 padding-top col-md-6 col-md-offset-1 col-sm-8 col-sm-offset-2 col-xs-12">
+    <div  class="mbr-article__content">
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis iure numquam tempore illum dolores neque quibusdam inventore impedit porro, quis modi magnam, rerum ex iste, nesciunt non a excepturi consequuntur. Laborum porro, perferendis debitis corrupti ut eligendi, modi facilis commodi dolorum libero amet est cupiditate. Optio, quidem. Mollitia dolores quia quo, sunt fugiat incidunt. Similique nulla, sit nihil eaque impedit nobis doloribus ab enim modi omnis laudantium officiis, soluta pariatur quibusdam maxime voluptatum harum quisquam sunt accusamus. Praesentium, maiores laboriosam, odio laborum, eum sit quaerat amet eius ipsum aliquid voluptates nemo rerum iste laudantium vitae ipsa. Obcaecati aliquam, sequi nostrum.</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis iure numquam tempore illum dolores neque quibusdam inventore impedit porro, quis modi magnam, rerum ex iste, nesciunt non a excepturi consequuntur. Laborum porro, perferendis debitis corrupti ut eligendi, modi facilis commodi dolorum libero amet est cupiditate. Optio, quidem. Mollitia dolores quia quo, sunt fugiat incidunt. Similique nulla, sit nihil eaque impedit nobis doloribus ab enim modi omnis laudantium officiis, soluta pariatur quibusdam maxime voluptatum harum quisquam sunt accusamus. Praesentium, maiores laboriosam, odio laborum, eum sit quaerat amet eius ipsum aliquid voluptates nemo rerum iste laudantium vitae ipsa. Obcaecati aliquam, sequi nostrum.</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis iure numquam tempore illum dolores neque quibusdam inventore impedit porro, quis modi magnam, rerum ex iste, nesciunt non a excepturi consequuntur. Laborum porro, perferendis debitis corrupti ut eligendi, modi facilis commodi dolorum libero amet est cupiditate. Optio, quidem. Mollitia dolores quia quo, sunt fugiat incidunt. Similique nulla, sit nihil eaque impedit nobis doloribus ab enim modi omnis laudantium officiis, soluta pariatur quibusdam maxime voluptatum harum quisquam sunt accusamus. Praesentium, maiores laboriosam, odio laborum, eum sit quaerat amet eius ipsum aliquid voluptates nemo rerum iste laudantium vitae ipsa. Obcaecati aliquam, sequi nostrum.</p>
