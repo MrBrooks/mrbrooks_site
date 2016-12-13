@@ -5390,12 +5390,6 @@ strong
     background-position: center;
     background-size: cover;
 }
-.mbr-project ul
-{
-    padding: 0;
-
-    list-style: none;
-}
 .mbr-project h1
 {
     margin-bottom: 47px;
@@ -5920,6 +5914,12 @@ strong
 }
 .mbr-question h1
 {
+    font-size: 32px;
+    line-height: 1.2;
+
+    max-width: 450px;
+    margin-top: 0;
+
     text-transform: uppercase;
 }
 @media screen and (max-width: 1024px)
@@ -5940,13 +5940,22 @@ strong
         text-align: left;
     }
 }
+.mbr-question label
+{
+    margin-bottom: 15px;
+
+    color: #e1bb9a;
+}
 .mbr-question input
 {
     width: 184px;
     height: 30px;
     margin-right: 15px;
-    margin-bottom: 30px;
-    padding: 5px 15px;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+
+    -moz-text-align-last: center;
+         text-align-last: center;
 
     color: #e1bb9a;
     border: 1px solid #e1bb9a;
@@ -5957,6 +5966,25 @@ strong
 {
     outline: none;
     box-shadow: none;
+}
+.mbr-question input.invalid
+{
+    border-color: red;
+}
+.mbr-question .mbr-btn
+{
+    margin-bottom: 20px;
+
+    color: #e1bb9a;
+}
+.mbr-question .mbr-btn:hover,
+.mbr-question .mbr-btn:focus
+{
+    color: white;
+}
+.mbr-question .mid
+{
+    padding-left: 25%;
 }
 ::-webkit-input-placeholder
 {
@@ -5986,6 +6014,26 @@ strong
 .mbr-question--content a:hover
 {
     color: #fefefe;
+}
+#answer-block
+{
+    display: none;
+}
+#phone-submit
+{
+    display: none;
+}
+.mid
+{
+    display: table;
+
+    height: 100%;
+}
+.mid > div
+{
+    display: table-cell;
+
+    vertical-align: middle;
 }
 .mbr-spec-projects
 {
