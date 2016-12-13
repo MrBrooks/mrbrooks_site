@@ -161,6 +161,7 @@ $(document).ready(function() {
   
   loader = new Loader(); //MBR DELETE
   loader.init();
+  QuestionPage();
 
     /* Custom */
 

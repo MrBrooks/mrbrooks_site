@@ -87,22 +87,87 @@
 </header>
 
 <main class="mbr-soon mbr-question">
-  <div class="row">
-    <div class="fullscreen-bg">
-      <video loop muted autoplay poster="/img/images/poster.jpg" class="fullscreen-bg__video">
-        <source src="/img/vids/question.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-1">
-      <h1>Маркетинг не может работать лучше?</h1>
-      <form id="toanswer" action="/answer/submit.php">
-        <input required type="text" name="name" placeholder="Имя"> 
-        <input required type="email" name="email" placeholder="Email">
-      </form>
-      <button type="submit" form="toanswer" class="mbr-btn">Найти ответ</button>
+  <div id="question-video" class="fullscreen-bg">
+    <video loop muted autoplay poster="/img/images/poster.jpg" class="fullscreen-bg__video">
+      <source src="/img/vids/question.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="mid">
+    <div>
+      <div id="question-block">
+        <h1>ЕСЛИ вы так далеко зашли, возможно, стоит продолжить?</h1>
+        <div><label for="code">ВВЕДИТЕ КОД С ВИЗИТКИ:</label></div>
+        <div><input id="code" required type="text" placeholder="КОД"></div>
+        <button id="to-answer-btn" class="mbr-btn">Продолжить</button>
+      </div>
+      <div id="answer-block">
+        <h1>
+          <span id="client-name"></span>,<br>
+          ВАШ МАРКЕТИНГ МОЖЕТ РАБОТАТЬ ЛУЧШЕ В 2017 ГОДУ?
+        </h1>
+        <button id="yes" class="mbr-btn">Да</button>
+        <form id="phone-submit">
+          <div><input id="phone" required type="text" placeholder="+7 (...) ... .. .."></div>
+          <button type="submit" id="know-how" class="mbr-btn">Узнать как</button>
+        </form>
+      </div>
     </div>
   </div>
 </main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.3/jquery.mask.min.js"></script>
+<script>
+  function QuestionPage(){
+    var code = $("#code"),
+        to_answer = $("#to-answer-btn"),
+        name = $("#client-name"),
+        video = $("#question-video"),
+        question = $("#question-block"),
+        answer = $("#answer-block"),
+        yes = $("#yes"),
+        form = $("#phone-submit");
+    to_answer.on('click', onClick);
+    yes.on('click', showPhone);
+
+    var base = {99323: "ИРИНА ВАСИЛЬЕВНА",604440: "ГЛЕБ ВЛАДИМИРОВИЧ",54076: "АНДРЕЙ ВИКТОРОВИЧ",56841: "ДМИТРИЙ ВЛАДИМИРОВИЧ",49365: "ЕЛЕНА ГЕОРГИЕВНА ",43302: "ВЛАДИМИР ВИКТОРОВИЧ",37672: "АЛЕКСАНДР БОРИСОВИЧ",18212: "ВАЛЕРИЙ ТОМАССОВИЧ",61271: "ВЛАДИМИР ЮРЬЕВИЧ",5663: "АЛЕКСЕЙ ЮРЬЕВИЧ ",12393: "ТАМЕРЛАН АСЛАНБЕКОВИЧ",23236: "ГАЛИНА ПЕТРОВНА",22492: "АНДРЕЙ ВАСИЛЬЕВИЧ",27328: "АЛЕКСАНДР БОРИСОВИЧ",11373: "ЭЛЕОНОРА АРИСТИДОВНА",51448: "ДМИТРИЙ ВЛАДИМИРОВИЧ ",11634: "АНДРЕЙ ФЕДОРОВИЧ",62568: "ЮРИЙ ЮРЬЕВИЧ",88711: "АЛЕКСАНДР МИХАЙЛОВИЧ",58910: "МАРИНА КОНСТАНТИНОВНА",37107: "ОЛЕГ ЭДУАРДОВИЧ",43216: "ЮУСО ТАПАНИ",66139: "ИГОРЬ ДМИТРИЕВИЧ",74535: "ОЛЕГ ЭДУАРДОВИЧ",77158: "АЛЕКСЕЙ ГЕОРГИЕВИЧ",71903: "АЛЕКСАНДР НИКОЛАЕВИЧ",22686: "АЛЕКСАНДР ПЕТРОВИЧ",34690: "ДМИТРИЙ ВЛАДИМИРОВИЧ",54881: "АНДРЕЙ АНАТОЛЬЕВИЧ",91629: "АЛИСА ВЯЧЕСЛАВОВНА",86479: "АЛЕКСАНДР ОЛЕГОВИЧ",17438: "ИЛЬЯ ОЛЕГОВИЧ",26319: "МИХАИЛ ЕФИМОВИЧ",24817: "СЕРГЕЙ ЮРЬЕВИЧ",55850: "РОМАН ИВАНОВИЧ",58777: "ДМИТРИЙ ВЯЧЕСЛАВОВИЧ",62069: "СЕРГЕЙ ДМИТРИЕВИЧ",5389: "АЛЬБЕРТ НОВАЙРОВИЧ",60524: "СВЕТЛАНА ЕВГЕНЬЕВНА",48964: "МИХАИЛ МИАХАЙЛОВИЧ",36278: "МИХАИЛ",74171: "ЕЛЕНА ПЕТРОВНА",93671: "АЛЕКСЕЙ АЛЕКСАНДРОВИЧ",2302: "АЛЕКСЕЙ НИКОЛАЕВИЧ",13259: "АЛЕКСАНДР ИЛЬИЧ",48897: "ЕВГЕНИЙ",12764: "ИГОРЬ ЛЕОНИДОВИЧ",20447: "ТАТЬЯНА ЮРЬЕВНА",58907: "ПАВЕЛ СЕРГЕЕВИЧ",90815: "АНДРЕЙ ВАСИЛЬЕВИЧ",96393: "КОНСТАНТИН ЕВГЕНЬЕВИЧ",87569: "АНДРЕЙ ПАВЛОВИЧ",89540: "АЛЕКСАНДР ЮРЬЕВИЧ",32095: "СВЕТЛАНА ВИКТОРОВНА",3559: "ВАДИМ ЛЕОНИДОВИЧ",65875: "ВЛАДИМИР ЕВГЕНЬЕВИЧ",4120: "АЛЕКСАНДР МИХАЙЛОВИЧ",71923: "ГАЛИНА НИКОЛАЕВНА",60242: "СВЕТЛАНА ИВАНОВНА",77624: "ТАТЬЯНА ЮРЬЕВНА",59008: "АНДРЕЙ ОЛЕГОВИЧ",22311: "ИННОКЕНТИЙ ВЛАДИМИРОВИЧ"};
+
+    $("#phone").mask('+7 (000) 000-00-00',{placeholder: "+7 (...) ... .. .."});
+
+    function onClick(){
+      var val = code.val();
+      if( val in base){
+        // console.log(base[val]);
+        setName(base[val]);
+        hideQuestion(showAnswer);
+      } else{
+        code.addClass('invalid');
+        console.log('invalid code');
+      }
+    }
+
+    function setName(text){
+      console.log('set name');
+      name.text(text);
+    }
+    function showAnswer(){
+      console.log('show answer');
+      answer.fadeIn(500);
+    }
+
+    function hideQuestion(callback){
+      video.fadeOut(500);
+      question.fadeOut(500, callback);
+      // callback();
+    }
+
+    function showPhone(){
+      form.fadeIn(500);
+    }
+
+
+  }
+  QuestionPage();
+</script>
 
 
     </body>
